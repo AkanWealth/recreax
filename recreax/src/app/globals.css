@@ -177,4 +177,17 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  h1 {
+    @apply text-[48px] text-brand-black font-semibold leading-[56px] font-jakarta;
+  }
+  h2 {
+    @apply text-[36px] text-brand-black/30 font-semibold leading-[40px] font-jakarta;
+  }
+  h3 {
+    @apply text-[24px] text-brand-black/30 font-semibold leading-[28px] font-jakarta;
+  }
+  h4 {
+    @apply text-[18px] text-brand-black/30 font-semibold leading-[20px] font-jakarta;
+  }
 }
