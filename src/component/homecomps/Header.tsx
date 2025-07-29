@@ -41,7 +41,7 @@ const plusJakarta = Plus_Jakarta_Sans({
 
 function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [ setIsModalOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const pathname = usePathname();
 
