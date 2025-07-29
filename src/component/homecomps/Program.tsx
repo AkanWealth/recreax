@@ -39,6 +39,8 @@ const Program = () => {
                   height={400}
                   width={400}
                   className="w-full h-64 lg:h-full object-cover"
+                  quality={100}
+                  priority
                 />
               </div>
               <div className="lg:w-1/2 p-8 bg-[#0D192B] order-1 lg:order-2">

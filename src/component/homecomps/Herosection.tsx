@@ -75,32 +75,37 @@ const HeroSection = () => {
               <Image
                 src="/hero1.jpg"
                 alt="Team collaboration"
-                height={288}
-                width={288}
+                height={500}
+                width={800}
                 className="w-full h-full object-cover"
+                quality={100}
+                priority
               />
               <div className="absolute top-4 left-4 bg-white text-black px-3 py-2 rounded-full text-xs sm:text-sm font-medium flex items-center gap-2 shadow-lg">
                 <div className="flex -space-x-2">
                   <Image
-                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=32&h=32&fit=crop&crop=face"
+                    src="/image1.png"
                     alt="User 1"
                     height={32}
                     width={32}
                     className="w-6 h-6 rounded-full border-2 border-white object-cover"
+                    quality={100}
+                    priority
                   />
                   <Image
-                    src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=32&h=32&fit=crop&crop=face"
+                    src="/image2.png"
                     alt="User 2"
                     height={32}
                     width={32}
                     className="w-6 h-6 rounded-full border-2 border-white object-cover"
+                    quality={100}
+                    priority
                   />
                 </div>
                 <span className="hidden sm:inline">1,000+ talents are building their careers with REX</span>
                 <span className="sm:hidden">1,000+ talents</span>
               </div>
-            </div>
-          </div>
+            </div>        </div>
 
           {/* Center arrow - positioned between cards */}
           <div className="absolute left-1/2 top-[100px] transform -translate-x-1/2 translate-y-1/4 w-18 h-18 bg-white rounded-full shadow-xl border-4 border-[#1a2b47] flex items-center justify-center z-30">
@@ -120,9 +125,11 @@ const HeroSection = () => {
               <Image
                 src="/hero2.jpg"
                 alt="Professional mentoring"
-                height={288}
-                width={288}
+                height={500}
+                width={800}
                 className="w-full h-full object-cover"
+                quality={100}
+                priority
               />
               <div className="absolute bottom-4 right-4 bg-[#22c55e]/20 backdrop-blur-md text-white px-3 py-2 rounded-lg text-xs sm:text-sm font-medium flex items-center gap-2 shadow-lg border border-white/20">
                 <span className="hidden sm:inline">Ask REX AI to help you with any task</span>
