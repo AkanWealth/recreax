@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
 
@@ -55,9 +55,9 @@ const TestimonialsSection = () => {
     }
   ];
 
-  const nextTestimonial = () => {
-    setCurrentTestimonial((prev) => (prev + 1) % mainTestimonials.length);
-  };
+  const nextTestimonial = useCallback(() => {
+  setCurrentTestimonial((prev) => (prev + 1) % mainTestimonials.length);
+}, [mainTestimonials.length]);
 
   const prevTestimonial = () => {
     setCurrentTestimonial((prev) => (prev - 1 + mainTestimonials.length) % mainTestimonials.length);
@@ -65,9 +65,9 @@ const TestimonialsSection = () => {
 
   // Auto-rotate testimonials
   useEffect(() => {
-    const interval = setInterval(nextTestimonial, 5000);
-    return () => clearInterval(interval);
-  }, []);
+  const interval = setInterval(nextTestimonial, 5000);
+  return () => clearInterval(interval);
+}, [nextTestimonial]);
 
   return (
     <div className="bg-[#B6EB6A] py-16 px-4 overflow-hidden">

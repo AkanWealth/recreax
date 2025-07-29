@@ -6,7 +6,7 @@ import React, { useState } from 'react';
 const NewsletterSection = () => {
   const [email, setEmail] = useState('');
 
-  const handleSubmit = (e:any) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log('Newsletter subscription:', email);
     setEmail('');

@@ -35,7 +35,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ onSubmitSuccess }) => {
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const handleInputChange = (e: any) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({
       ...prev,
@@ -43,7 +43,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ onSubmitSuccess }) => {
     }));
   };
 
-  const handleSubmit = (e: any) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     // Validate form
     if (!formData.fullName || !formData.email || !formData.inquiryType || !formData.message) {
@@ -95,7 +95,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ onSubmitSuccess }) => {
               We&apos;ll get back to you shortly.
             </p>
           </div>
-        </div>
+       </div> 
       </div>
     );
   }
@@ -116,7 +116,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ onSubmitSuccess }) => {
         <div className={`grid lg:grid-cols-3 gap-12 max-w-6xl mx-auto ${plusJakarta.variable}`}>
           {/* Form Section */}
           <div className="lg:col-span-2">
-            <div className="bg-white rounded-2xl p-8 shadow-sm">
+            <form className="bg-white rounded-2xl p-8 shadow-sm" onSubmit={handleSubmit}>
               <div className="space-y-6">
                 <div>
                   <label htmlFor="fullName" className="block text-sm font-semibold text-slate-900 mb-3">
@@ -196,15 +196,14 @@ const ContactForm: React.FC<ContactFormProps> = ({ onSubmitSuccess }) => {
                 </div>
 
                 <button
-                  type="button"
-                  onClick={handleSubmit}
+                  type="submit"
                   className="w-full bg-gray-400 text-white py-4 px-6 rounded-xl font-semibold hover:bg-gray-500 transition-colors flex items-center justify-center gap-2"
                 >
                   Submit Message
                   <Mail className="w-5 h-5" />
                 </button>
               </div>
-            </div>
+            </form>
           </div>
 
           {/* Contact Info Panel */}
