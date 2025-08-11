@@ -79,11 +79,11 @@ const TalentProgram: React.FC = () => {
         </div>
 
         {/* Benefits Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-26">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-26">
           {programBenefits.map((benefit, index) => (
             <div
               key={index}
-              className="rounded-lg p-8 hover:shadow-md transition-shadow duration-300"
+              className="rounded-lg p-8 hover:shadow-md transition-shadow bg-white duration-300"
             >
               <div className="flex flex-col items-start">
                 <div className="mb-4 p-3 bg-blue-100 rounded-lg">

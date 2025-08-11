@@ -171,7 +171,7 @@ function Footer() {
           </div>
 
           {/* Bottom Section */}
-          <div className="pt-6 border-t border-gray-700 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+          <div className="pt-6 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
             <div className="flex flex-col sm:flex-row gap-2 sm:gap-6 text-sm order-2 sm:order-1">
               <Link href="/terms-of-service" className="text-white hover:text-white transition-colors">
                 Terms of Service

@@ -1,3 +1,4 @@
+
 "use client";
 import React, { useState, useEffect, useCallback } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
@@ -14,16 +15,22 @@ const TestimonialsSection = () => {
       image: "/testimonial1.png"
     },
     {
-      quote: "This experience strengthened my technical expertise, expanded my industry knowledge and given me real world exposure to collaborative problem-solving.",
-      name: "Philip",
-      role: "Backend Developer",
-      image: "/image2.png"
+      quote: "Truly what is in the training is different from what’s happening when working on a project. ReCreaX made me understand this . Now, I confidently work as a project manager without fidgeting.",
+      name: "Mary",
+      role: "Project Manager",
+      image: "/profile/profile7.png"
     },
     {
-      quote: "This project sharpened my project management skills and boosted my self confidence. I am so grateful for this opportunity.",
-      name: "Grace",
-      role: "Product Manager",
-      image: "/image3.jpg"
+      quote: "I finally have leverage to apply for the roles I’m interested in. I was able to get an internship at a company based in Canada, leveraging my practical experience at ReCreaX",
+      name: "Akorede",
+      role: "Business Analyst",
+      image: "/profile/profile8.jpg"
+    },
+    {
+      quote: "Today, I’m proud to say that I have not only gained valuable skills but also landed a contract gig to design for a client.",
+      name: "Mabel",
+      role: "UI/UX Designer",
+      image: "/profile/profile9.jpg"
     }
   ];
 
@@ -56,8 +63,8 @@ const TestimonialsSection = () => {
   ];
 
   const nextTestimonial = useCallback(() => {
-  setCurrentTestimonial((prev) => (prev + 1) % mainTestimonials.length);
-}, [mainTestimonials.length]);
+    setCurrentTestimonial((prev) => (prev + 1) % mainTestimonials.length);
+  }, [mainTestimonials.length]);
 
   const prevTestimonial = () => {
     setCurrentTestimonial((prev) => (prev - 1 + mainTestimonials.length) % mainTestimonials.length);
@@ -65,9 +72,9 @@ const TestimonialsSection = () => {
 
   // Auto-rotate testimonials
   useEffect(() => {
-  const interval = setInterval(nextTestimonial, 5000);
-  return () => clearInterval(interval);
-}, [nextTestimonial]);
+    const interval = setInterval(nextTestimonial, 8000); // Changed from 5000ms to 8000ms to slow down
+    return () => clearInterval(interval);
+  }, [nextTestimonial]);
 
   return (
     <div className="bg-[#B6EB6A] py-16 px-4 overflow-hidden">
@@ -95,8 +102,8 @@ const TestimonialsSection = () => {
             </blockquote>
             
             <div className="flex items-center justify-center gap-4 mb-8">
-              <div className="w-16 h-16 bg-slate-300 rounded-full flex items-center justify-center overflow-hidden">
-                <div className="w-12 h-12 bg-slate-400 rounded-full">
+              <div className="w-16 h-16 rounded-full flex items-center justify-center overflow-hidden">
+                <div className="w-12 h-12  rounded-full">
                   <Image 
                     src={mainTestimonials[currentTestimonial].image} 
                     alt={mainTestimonials[currentTestimonial].name} 
@@ -184,7 +191,7 @@ const TestimonialsSection = () => {
         }
         
         .animate-scroll {
-          animation: scroll 30s linear infinite;
+          animation: scroll 25s linear infinite; /* Changed from 30s to 25s for faster scrolling */
         }
         
         .animate-scroll:hover {

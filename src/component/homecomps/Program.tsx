@@ -135,80 +135,19 @@ const Program = () => {
               
               <div className="lg:w-1/2 bg-slate-800 relative flex items-center justify-center order-2 min-h-[400px]">
                 {/* Network visualization */}
-                <div className="relative w-full h-full flex items-center justify-center p-8">
+                <div className="relative -left-9 w-full h-full flex items-center justify-center">
                   {/* Central person - larger */}
-                  <div className="absolute w-20 lg:w-28 h-20 lg:h-28 rounded-full bg-white flex items-center justify-center z-10 shadow-xl border-4 border-white">
+                  {/* <div className="absolute w-60 lg:w-68 h-60 lg:h-68 rounded-full flex items-center justify-center z-10 shadow-xl border-4 border-white"> */}
                     <Image
-                      src="/image5.jpg" 
+                      src="/StudioCohort.png" 
                       alt="Central team member" 
-                      height={112}
-                      width={112}
-                      className="w-full h-full rounded-full object-cover"
+                      height={500}
+                      width={500}
+                      className="w-auto h-auto object-cover"
                     />
-                  </div>
+                  {/* </div> */}
                   
-                  {/* Top left member */}
-                  <div className="absolute w-12 lg:w-16 h-12 lg:h-16 rounded-full bg-white flex items-center justify-center shadow-lg border-2 border-white" style={{top: '12%', left: '18%'}}>
-                    <Image
-                      src="/image4.jpg" 
-                      alt="Team member" 
-                      height={64}
-                      width={64}
-                      className="w-full h-full rounded-full object-cover"
-                    />
-                  </div>
-                  
-                  {/* Top right member */}
-                  <div className="absolute w-12 lg:w-16 h-12 lg:h-16 rounded-full bg-white flex items-center justify-center shadow-lg border-2 border-white" style={{top: '12%', right: '18%'}}>
-                    <Image
-                      src="/image6.png" 
-                      alt="Team member" 
-                      height={64}
-                      width={64}
-                      className="w-full h-full rounded-full object-cover"
-                    />
-                  </div>
-                  
-                  {/* Bottom left member */}
-                  <div className="absolute w-12 lg:w-16 h-12 lg:h-16 rounded-full bg-white flex items-center justify-center shadow-lg border-2 border-white" style={{bottom: '22%', left: '12%'}}>
-                    <Image
-                      src="/image3.jpg" 
-                      alt="Team member" 
-                      height={64}
-                      width={64}
-                      className="w-full h-full rounded-full object-cover"
-                    />
-                  </div>
-                  
-                  {/* Bottom right member */}
-                  <div className="absolute w-12 lg:w-16 h-12 lg:h-16 rounded-full bg-white flex items-center justify-center shadow-lg border-2 border-white" style={{bottom: '12%', right: '22%'}}>
-                    <Image
-                      src="/image2.png" 
-                      alt="Team member" 
-                      height={64}
-                      width={64}
-                      className="w-full h-full rounded-full object-cover"
-                    />
-                  </div>
-                  
-                  {/* Small member near center */}
-                  <div className="absolute w-10 lg:w-12 h-10 lg:h-12 rounded-full bg-white flex items-center justify-center shadow-lg border-2 border-white" style={{bottom: '32%', left: '32%'}}>
-                    <Image
-                      src="/image1.png" 
-                      alt="Team member" 
-                      height={48 }
-                      width={48}
-                      className="w-full h-full rounded-full object-cover"
-                    />
-                  </div>
-                  
-                  {/* Role badges */}
-                  <div className="absolute bg-purple-500 text-white px-2 lg:px-3 py-1 rounded-full text-xs font-medium shadow-lg" style={{top: '6%', right: '12%'}}>
-                    Developer
-                  </div>
-                  <div className="absolute bg-blue-500 text-white px-2 lg:px-3 py-1 rounded-full text-xs font-medium shadow-lg" style={{bottom: '6%', left: '8%'}}>
-                    Product Designer
-                  </div>
+                 
                   
                  
                 </div>

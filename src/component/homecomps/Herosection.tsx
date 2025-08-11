@@ -1,10 +1,7 @@
-
-
-
-
+"use client";
 import { Bricolage_Grotesque } from "next/font/google";
-import React from "react";
-import { RiSparkling2Line } from "react-icons/ri";
+import React, { useState, useEffect } from "react";
+import { RiSparkling2Line, RiSparklingFill, RiSendPlaneFill  } from "react-icons/ri";
 import { FaLongArrowAltRight } from "react-icons/fa";
 import { GoArrowUpLeft } from "react-icons/go";
 import { Plus_Jakarta_Sans } from "next/font/google";
@@ -22,21 +19,54 @@ const bricolage = Bricolage_Grotesque({
 });
 
 const HeroSection = () => {
+  const [currentRole, setCurrentRole] = useState(0);
+  
+  const roles = [
+    { 
+      text: "Professional", 
+      bgColor: "bg-white", 
+      textColor: "text-[#2563eb]", 
+      borderColor: "border-[#2563eb]" 
+    },
+    { 
+      text: "Product Designer", 
+      bgColor: "bg-white", 
+      textColor: "text-green-500", 
+      borderColor: "border-green-500" 
+    },
+    { 
+      text: "Software Engineer", 
+      bgColor: "bg-white", 
+      textColor: "text-orange-500", 
+      borderColor: "border-orange-500" 
+    }
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentRole((prev) => (prev + 1) % roles.length);
+    }, 2000); // Change every 2 seconds
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section
       className={`relative overflow-visible bg-[#1a2b47] text-white py-20 px-4 sm:px-8 flex flex-col items-center text-center ${bricolage.className}`}
     >
       {/* Heading and Subtext */}
-      <div className="text-center max-w-3xl mb-16 z-10">
-        <h1 className="text-3xl sm:text-xl lg:text-[50px] font-bold mb-2 leading-tight">
+      <div className="text-center max-w-7wl lg:max-w-7xl sm:max-w-5xl mb-16 z-10">
+        <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold mb-2 leading-tight">
           From Learner to{" "}
           <span className="relative inline-block -rotate-4">
-            <span className="bg-white text-[#2563eb] px-6 py-2 rounded-full shadow-lg font-bold inline-block transform border-2 border-[#2563eb]">
-              Professional
+            <span 
+              className={`${roles[currentRole].bgColor} ${roles[currentRole].textColor} px-6 py-2 rounded-full shadow-lg font-bold inline-block transform border-2 ${roles[currentRole].borderColor} transition-all duration-500 ease-in-out`}
+            >
+              {roles[currentRole].text}
             </span>
           </span>
         </h1>
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-8 leading-tight">
+        <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold mb-8 leading-tight">
           <span className="text-[#B6EB6A]">REX</span> Gets You There
         </h2>
         <p
@@ -75,16 +105,17 @@ const HeroSection = () => {
               <Image
                 src="/hero1.jpg"
                 alt="Team collaboration"
-                height={500}
-                width={800}
+                height={700}
+                width={900}
                 className="w-full h-full object-cover"
                 quality={100}
                 priority
               />
-              <div className="absolute top-4 left-4 bg-white text-black px-3 py-2 rounded-full text-xs sm:text-sm font-medium flex items-center gap-2 shadow-lg">
-                <div className="flex -space-x-2">
+              <div className="absolute top-1 bg-white text-black px-3 py-2 rounded-2xl text-xs sm:text-sm font-medium  gap-2 shadow-lg">
+                <div>
+                <div className="flex -space-x-2 bg-[#003267] p-2 rounded-2xl w-[112px]">
                   <Image
-                    src="/image1.png"
+                    src="/profile/profile1.jpg"
                     alt="User 1"
                     height={32}
                     width={32}
@@ -93,7 +124,43 @@ const HeroSection = () => {
                     priority
                   />
                   <Image
-                    src="/image2.png"
+                    src="/profile/profile2.png"
+                    alt="User 2"
+                    height={32}
+                    width={32}
+                    className="w-6 h-6 rounded-full border-2 border-white object-cover"
+                    quality={100}
+                    priority
+                  />
+                  <Image
+                    src="/profile/profile3.jpg"
+                    alt="User 2"
+                    height={32}
+                    width={32}
+                    className="w-6 h-6 rounded-full border-2 border-white object-cover"
+                    quality={100}
+                    priority
+                  />
+                  <Image
+                    src="/profile/profile4.jpg"
+                    alt="User 2"
+                    height={32}
+                    width={32}
+                    className="w-6 h-6 rounded-full border-2 border-white object-cover"
+                    quality={100}
+                    priority
+                  />
+                  <Image
+                    src="/profile/profile5.jpg"
+                    alt="User 2"
+                    height={32}
+                    width={32}
+                    className="w-6 h-6 rounded-full border-2 border-white object-cover"
+                    quality={100}
+                    priority
+                  />
+                  <Image
+                    src="/profile/profile6.png"
                     alt="User 2"
                     height={32}
                     width={32}
@@ -102,8 +169,9 @@ const HeroSection = () => {
                     priority
                   />
                 </div>
-                <span className="hidden sm:inline">1,000+ talents are building their careers with REX</span>
-                <span className="sm:hidden">1,000+ talents</span>
+                </div>
+                <p className="hidden sm:inline"><span className="text-[#003267]">1,000+</span> talents are building their careers with REX</p>
+                <p className="sm:hidden"><span className="text-[#003267]">1,000+</span>talents</p>
               </div>
             </div>        </div>
 
@@ -125,15 +193,17 @@ const HeroSection = () => {
               <Image
                 src="/hero2.jpg"
                 alt="Professional mentoring"
-                height={500}
-                width={800}
+                height={700}
+                width={900}
                 className="w-full h-full object-cover"
                 quality={100}
                 priority
               />
-              <div className="absolute bottom-4 right-4 bg-[#22c55e]/20 backdrop-blur-md text-white px-3 py-2 rounded-lg text-xs sm:text-sm font-medium flex items-center gap-2 shadow-lg border border-white/20">
-                <span className="hidden sm:inline">Ask REX AI to help you with any task</span>
+              <div className="absolute bottom-4 right-4 bg-white/20 backdrop-blur-md text-white px-3 py-2 rounded-lg text-xs sm:text-sm font-medium flex items-center gap-2 shadow-lg border border-white/20">
+                <span className="bg-[#9FDD62] rounded-full p-2"><RiSparklingFill className="text-[#3F4418]"/></span>
+                <span className="hidden sm:inline"> Ask REX AI to help you with any task</span>
                 <span className="sm:hidden">Ask REX AI</span>
+               <span className="bg-[#12233D] rounded-full p-2"><RiSendPlaneFill className="text-[#FFFFFF]"/></span>
               </div>
             </div>
           </div>

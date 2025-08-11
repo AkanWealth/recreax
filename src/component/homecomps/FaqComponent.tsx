@@ -132,7 +132,7 @@
 
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import { ArrowDown } from 'lucide-react';
 import { Plus_Jakarta_Sans, Bricolage_Grotesque} from "next/font/google";
 
@@ -195,18 +195,36 @@ const faqData: FAQItem[] = [
   }
 ];
 
-const FAQItem: React.FC<{ item: FAQItem }> = ({ item }) => {
+const FAQItem: React.FC<{ item: FAQItem; index: number }> = ({ item, index }) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleOpen = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <div className={`border-b border-gray-200 last:border-b-0 py-6 ${bricolage.className}`}>
-        <div className="mb-4 flex item-center justify-between"><h3 className="text-lg font-medium text-gray-900 mb-4">
-        {item.question}
-      </h3>
-        <ArrowDown className="w-5 h-5 text-[#97A339]" />
+      <div 
+        className="mb-4 flex items-center justify-between cursor-pointer"
+        onClick={toggleOpen}
+      >
+        <h3 className="text-lg font-medium text-gray-900 mb-0">
+          {item.question}
+        </h3>
+        <ArrowDown 
+          className={`w-5 h-5 text-[#97A339] transition-transform duration-300 ${
+            isOpen ? 'rotate-180' : 'rotate-0'
+          }`} 
+        />
       </div>
       
-      <p className={`text-gray-600 text-sm leading-relaxed ${plusJakarta.className}`}>
-        {item.answer}
-      </p>
+      <div className={`overflow-hidden transition-all duration-300 ease-in-out ${
+        isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+      }`}>
+        <p className={`text-gray-600 text-sm leading-relaxed pt-2 ${plusJakarta.className}`}>
+          {item.answer}
+        </p>
+      </div>
     </div>
   );
 };
@@ -231,6 +249,7 @@ const FAQ: React.FC = () => {
             <FAQItem
               key={index}
               item={item}
+              index={index}
             />
           ))}
         </div>

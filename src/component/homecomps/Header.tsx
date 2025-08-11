@@ -3,7 +3,6 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-// import { Button } from "../ui/button";
 import { usePathname } from "next/navigation";
 import {Button} from "../ui/button";
 import { PiBookOpenTextLight} from "react-icons/pi";
@@ -12,7 +11,6 @@ import { IoMailUnreadOutline } from "react-icons/io5";
 import { ArrowRight } from "lucide-react";
 import {  Plus_Jakarta_Sans } from "next/font/google";
 
-// import { Button } from "../ui/button";
 import {
   DropdownMenu,
   DropdownMenuTrigger,
