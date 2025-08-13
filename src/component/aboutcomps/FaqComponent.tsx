@@ -65,7 +65,7 @@ const faqData: FAQItem[] = [
   }
 ];
 
-const FAQItem: React.FC<{ item: FAQItem; index: number }> = ({ item, index }) => {
+const FAQItem: React.FC<{ item: FAQItem; index: number }> = ({ item}) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleOpen = () => {

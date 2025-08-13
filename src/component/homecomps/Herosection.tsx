@@ -43,7 +43,7 @@ const HeroSection = () => {
       setCurrentRole((prev) => (prev + 1) % roles.length);
     }, 2000);
     return () => clearInterval(interval);
-  }, []);
+  }, [roles.length]);
 
   const containerVariants: Variants = {
     hidden: { opacity: 0 },

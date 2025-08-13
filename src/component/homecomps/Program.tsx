@@ -35,7 +35,7 @@ const Program = () => {
       opacity: 0,
       x: index % 2 === 0 ? -100 : 100,
     }),
-    visible: (index: number) => ({
+    visible: () => ({
       opacity: 1,
       x: 0,
       transition: {

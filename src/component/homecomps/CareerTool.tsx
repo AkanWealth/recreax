@@ -7,7 +7,7 @@ import Lottie, { LottieRefCurrentProps } from "lottie-react";
 import { motion, useInView, Variants } from "framer-motion";
 import aiMentorAnimation from "./animations/ai-mentor.json";
 import aiAnimation from "./animations/AIResumeReviewer.json";
-import careerAnimation from "./animations/CareerPathfinder.json";
+// import careerAnimation from "./animations/CareerPathfinder.json";
 import confidenceCTAAnimation from "./animations/ConfidenceCTA.json";
 import interviewAnimation from "./animations/InterviewCoach.json";
 import livescasestudyAnimation from "./animations/Livescasestudy.json";
