@@ -7,7 +7,7 @@ import TalentProgram from "@/component/homecomps/TalentProgram";
 import CtaSection from "@/component/homecomps/CtaSection";
 export default function Home() {
   return (
-   <div className="flex flex-col w-full">
+   <div className="min-h-screen">
       <HeroSection />
       <CareerToolsSection />
       <TestimonialsSection />    
