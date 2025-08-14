@@ -7,7 +7,7 @@ import ProjectGallerySection from '@/component/studio/ProjectCompleted';
 import CtaSection from '@/component/studio/CtaSection';
 export default function Program () {
   return (
-   <div  className="min-h-screen">
+   <div  className="flex flex-col w-full">
    <EarlyStageIdeasSection />
     <ProjectGallerySection />
     <StudioCohortSection />

@@ -6,7 +6,7 @@ import NewsletterSection from '@/component/blogcomps/Subcribe';
 export default function Program () {
     const [searchQuery, setSearchQuery] = useState('');
   return (
-   <div  className="min-h-screen">
+   <div  className="flex flex-col w-full">
      <HeroSection searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
       <BlogSection searchQuery={searchQuery} />
         <NewsletterSection />

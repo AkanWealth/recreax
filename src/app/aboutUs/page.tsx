@@ -7,7 +7,7 @@ import HowWeMakeThisHappen from '@/component/aboutcomps/HowWeMakeThisHappen';
 import FAQ from '@/component/aboutcomps/FaqComponent';
 export default function Program () {
   return (
-   <div  className="min-h-screen">
+   <div  className="flex flex-col w-full">
     <HeroSection />
     <OurMission />
     <WhatWeBelieve />
