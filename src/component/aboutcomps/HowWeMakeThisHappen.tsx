@@ -1,19 +1,26 @@
 import React from 'react';
-import { TrendingUp } from 'lucide-react';
 import Image from 'next/image';
+import { Plus_Jakarta_Sans } from "next/font/google";
 
+
+
+const plusJakarta = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  weight: ["400"],
+  variable: "--font-plus-jakarta-sans",
+});
 const HowWeMakeThisHappen: React.FC = () => {
   return (
     <div className="min-h-screen bg-[#032353]  p-8">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 p-4 items-center">
         
         {/* Left Column */}
         <div className="space-y-8">
           <div>
-            <h1 className="text-5xl font-bold text-green-400 mb-6 leading-tight">
+            <h1 className="text-5xl font-bold text-[#B6EB6A] mb-6 leading-tight">
               How We Make This Happen
             </h1>
-            <p className="text-white text-lg leading-relaxed">
+            <p className={`text-white text-lg leading-relaxed ${plusJakarta.className}`}>
               We built REX, your AI career mentor, to help you practice 
               real-world scenarios, prep for interviews, refine your resume, 
               and find direction.
@@ -22,18 +29,15 @@ const HowWeMakeThisHappen: React.FC = () => {
 
           {/* Team collaboration image with arrow */}
           <div className="relative">
-            <div className="bg-gradient-to-br from-cyan-200 to-cyan-300 rounded-3xl p-6 relative">
+            <div className="p-6 relative">
               <Image
-                src="/about4.png" 
+                src="/about/HowHappen.svg" 
                 alt="Team collaboration" 
-                width={100}
-                height={100}
-                className="w-full h-64 object-cover rounded-2xl"
+                width={528.0001220703125}
+                height={330}
+                className="w-auto h-auto object-cover rounded-2xl"
               />
-              {/* Blue arrow */}
-              <div className="absolute -right-8 top-1/2 transform -translate-y-1/2">
-                <TrendingUp className="w-16 h-16 text-blue-500 rotate-12" strokeWidth={3} />
-              </div>
+              
             </div>
           </div>
         </div>
@@ -41,7 +45,7 @@ const HowWeMakeThisHappen: React.FC = () => {
         {/* Right Column */}
         <div className="space-y-8">
           <div className="text-white mb-8">
-            <p className="text-lg leading-relaxed">
+            <p className={`text-lg leading-relaxed ${plusJakarta.className}`}>
               Then, we created two clear execution paths:
             </p>
           </div>
@@ -49,26 +53,28 @@ const HowWeMakeThisHappen: React.FC = () => {
           {/* Execution Path 1 */}
           <div className="space-y-6">
             <div className="flex items-start gap-4">
-              <div className="w-3 h-3 bg-green-400 rounded-full mt-2 flex-shrink-0"></div>
+              <Image
+                  src={"/about/Vector22358(1).svg"}
+                  height={84}
+                  width={139}
+                  alt='profile'
+                  className='w-auto h-auto'/>
               <div className="flex-1">
-                <h3 className="text-2xl font-bold text-cyan-300 mb-4">
+                <h3 className="text-2xl font-bold text-[#6ECDDD] mb-4">
                   The ReCreaX Internship
                 </h3>
                 
                 {/* Profile avatars */}
                 <div className="flex -space-x-3 mb-4">
-                  <div className="w-12 h-12 bg-orange-400 rounded-full border-4 border-blue-900 flex items-center justify-center">
-                    <span className="text-white font-bold text-sm">A</span>
-                  </div>
-                  <div className="w-12 h-12 bg-orange-500 rounded-full border-4 border-blue-900 flex items-center justify-center">
-                    <span className="text-white font-bold text-sm">B</span>
-                  </div>
-                  <div className="w-12 h-12 bg-red-500 rounded-full border-4 border-blue-900 flex items-center justify-center">
-                    <span className="text-white font-bold text-sm">C</span>
-                  </div>
+                  <Image
+                  src={"/about/Frame2.svg"}
+                  height={84}
+                  width={139}
+                  alt='profile'
+                  className='w-auto h-auto'/>
                 </div>
                 
-                <p className="text-white/90 leading-relaxed">
+                <p className={`text-white/90 leading-relaxed ${plusJakarta.className}`}>
                   a 3-month structured experience working with real teams on 
                   internal product initiatives.
                 </p>
@@ -79,24 +85,29 @@ const HowWeMakeThisHappen: React.FC = () => {
           {/* Execution Path 2 */}
           <div className="space-y-6">
             <div className="flex items-start gap-4">
-              <div className="w-3 h-3 bg-white rounded-full mt-2 flex-shrink-0"></div>
+              <Image
+                  src={"/about/Vector22358.svg"}
+                  height={84}
+                  width={139}
+                  alt='profile'
+                  className='w-auto h-auto'/>
               <div className="flex-1">
-                <h3 className="text-2xl font-bold text-cyan-300 mb-4">
+                <h3 className="text-2xl font-bold text-[#6ECDDD] mb-4">
                   The ReCreaX Studio Cohort
                 </h3>
                 
                 {/* Studio image placeholder */}
-                <div className="bg-gray-600 rounded-xl p-4 mb-4 h-20 flex items-center justify-center">
+                <div className="">
                   <Image
-                    src="/api/placeholder/200/60" 
+                    src="/about/RCXStudio.svg" 
                     alt="Studio cohort"
-                    width={200}
+                    width={139}
                     height={60} 
-                    className="w-full h-full object-cover rounded-lg"
+                    className="w-auto h-auto object-cover rounded-lg"
                   />
                 </div>
                 
-                <p className="text-white/90 leading-relaxed">
+                <p className={`text-white/90 leading-relaxed ${plusJakarta.className}`}>
                   a collaborative sprint program where talents co-create MVP 
                   features in startup-style teams.
                 </p>
@@ -105,12 +116,12 @@ const HowWeMakeThisHappen: React.FC = () => {
           </div>
 
           {/* Bottom text */}
-          <div className="pt-8 border-t border-blue-700">
-            <p className="text-white/90 text-lg leading-relaxed mb-2">
+          <div className="pt-8 ">
+            <p className={`text-white/90 text-lg leading-relaxed mb-2 ${plusJakarta.className}`}>
               Together, these tools and programs give you the one thing 
               missing from most early tech journeys:
             </p>
-            <p className="text-cyan-300 text-xl font-semibold">
+            <p className={`text-[#6ECDDD] text-xl font-semibold ${plusJakarta.className}`}>
               proof that you can deliver.
             </p>
           </div>

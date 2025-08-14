@@ -1,7 +1,6 @@
 import React from 'react';
 import HeroSection from '@/component/aboutcomps/Herosection';
 import CtaSection from '@/component/aboutcomps/CtaSection';
-import TalentProgram from '@/component/aboutcomps/TalentProgram';
 import WhatWeBelieve from '@/component/aboutcomps/WhatWeBelieve';
 import OurMission from '@/component/aboutcomps/ourMisson';
 import HowWeMakeThisHappen from '@/component/aboutcomps/HowWeMakeThisHappen';
@@ -13,7 +12,7 @@ export default function Program () {
     <OurMission />
     <WhatWeBelieve />
     <HowWeMakeThisHappen />
-    <TalentProgram />
+    {/* <TalentProgram /> */}
     <FAQ />
     <CtaSection />
   

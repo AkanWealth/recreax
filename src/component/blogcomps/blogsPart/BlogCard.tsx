@@ -10,7 +10,8 @@ const BlogCard: React.FC<BlogCardProps> = ({
     <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 cursor-pointer">
       <div className={`h-48 relative ${gradient} flex items-center justify-center`}>
         {image ? (
-          <Image src={image} alt={title} height={124} width={69} className="w-full h-full object-cover" />
+          <Image src={image} alt={title} height={370} width={198} quality={100}
+                priority className="w-full h-full object-cover" />
         ) : (
           <div className="w-16 h-16 bg-white bg-opacity-20 rounded-lg"></div>
         )}

@@ -2,10 +2,7 @@
 "use client";
 import React, { useRef } from "react";
 import { Plus_Jakarta_Sans, Bricolage_Grotesque } from "next/font/google";
-import { HiNewspaper } from "react-icons/hi2";
-import { RiFolderImageLine, RiBookletFill, RiGroup2Line } from "react-icons/ri";
-import { VscBook } from "react-icons/vsc";
-import { HiDesktopComputer } from "react-icons/hi";
+import Image from "next/image";
 import { motion, Variants, useInView } from "framer-motion";
 
 const plusJakarta = Plus_Jakarta_Sans({
@@ -20,39 +17,39 @@ const bricolage = Bricolage_Grotesque({
 });
 
 interface ProgramBenefit {
-  icon: React.ReactNode;
+  image: string; // Changed from icon to image path
   title: string;
   description: string;
 }
 
 const programBenefits: ProgramBenefit[] = [
   {
-    icon: <HiNewspaper className="w-5 h-5" />,
+    image: "/icons/control.svg", 
     title: "Total Control, No Pressure",
     description: "Set your availability, choose when and how often you mentor, and decide whether to offer sessions for free or paid.",
   },
   {
-    icon: <RiFolderImageLine className="w-5 h-5" />,
+    image: "/icons/money-bag1.svg", 
     title: "No Hidden Fees",
     description: "If you choose to charge for sessions, 100% of the fee goes to you with no hidden cuts or commissions.",
   },
   {
-    icon: <RiBookletFill className="w-5 h-5" />,
+    image: "/icons/give.svg", 
     title: "Grow While You Give",
     description: "Build leadership skills, improve how you communicate, and gain new clarity in your own work by mentoring others.",
   },
   {
-    icon: <VscBook className="w-5 h-5" />,
+    image: "/icons/book.svg", 
     title: "Stay Industry-Relevant",
     description: "Coaching early talent keeps you close to fresh thinking, tools, and real-world questions.",
   },
   {
-    icon: <HiDesktopComputer className="w-5 h-5" />,
+    image: "/icons/iconV.svg", 
     title: "Boost Your Visibility",
     description: "ReCreaX promotes mentors through spotlight content, blog features, and program visibility.",
   },
   {
-    icon: <RiGroup2Line className="w-5 h-5" />,
+    image: "/icons/network.svg", 
     title: "Expand Your Network",
     description: "Collaborate with other mentors, talents, and partners across multiple regions and roles.",
   },
@@ -109,10 +106,16 @@ const TalentProgram: React.FC = () => {
             >
               <div className="flex flex-col items-start">
                 <motion.div
-                  className="mb-4 p-3 bg-blue-100 rounded-lg"
+                  className="mb-10 p-3 rounded-lg"
                   variants={fadeInUpVariants}
                 >
-                  <div className="text-[#97A339]">{benefit.icon}</div>
+                  <Image
+                    src={benefit.image}
+                    alt={benefit.title}
+                    width={40} // Matches original icon size (w-5 h-5)
+                    height={40}
+                    className="object-contain"
+                  />
                 </motion.div>
                 <h3 className={`text-xl font-semibold text-[#12233D] mb-3 ${bricolage.className}`}>
                   {benefit.title}

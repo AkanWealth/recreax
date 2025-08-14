@@ -4,6 +4,7 @@ import React, { useRef } from "react";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import Image from "next/image";
 import { motion, Variants, useInView } from "framer-motion";
+import { RiSparkling2Line } from "react-icons/ri";
 
 const plusJakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -103,12 +104,12 @@ const HelpTalentsGrow = () => {
           variants={containerVariants}
         >
           <motion.button
-            className="bg-[#00d4ff] text-black hover:bg-[#00c4ef] px-8 py-4 rounded-lg font-semibold text-lg flex items-center gap-2 transition-colors"
+            className="bg-[#00FFFF] text-black hover:bg-[#00c4ef] px-8 py-4 rounded-lg font-semibold text-lg flex items-center gap-2 transition-colors"
             variants={buttonVariants}
             whileHover="hover"
             whileTap={{ scale: 0.95 }}
           >
-            Become a Mentor ✨
+            Become a Mentor <span><RiSparkling2Line className="w-5 h-5"/></span>
           </motion.button>
           <motion.button
             className="border border-white text-white hover:bg-white/10 px-8 py-4 rounded-lg font-semibold text-lg flex items-center gap-2 transition-colors"
@@ -126,15 +127,15 @@ const HelpTalentsGrow = () => {
           variants={containerVariants}
         >
           <motion.div className="text-center" variants={statVariants}>
-            <div className="text-5xl font-bold text-[#B6EB6A] mb-2">500+</div>
-            <div className="text-gray-300 text-lg">sessions hosted</div>
+            <div className="text-3xl font-bold text-white mb-2">500+</div>
+            <div className="text-white text-lg">sessions hosted</div>
           </motion.div>
 
           <div className="hidden lg:block w-px h-16 bg-gray-600"></div>
 
           <motion.div className="text-center" variants={statVariants}>
-            <div className="text-5xl font-bold text-[#B6EB6A] mb-2">200+</div>
-            <div className="text-gray-300 text-lg">talents mentored</div>
+            <div className="text-3xl font-bold text-white mb-2">200+</div>
+            <div className="text-white text-lg">talents mentored</div>
           </motion.div>
 
           <div className="hidden lg:block w-px h-16 bg-gray-600"></div>
@@ -142,15 +143,18 @@ const HelpTalentsGrow = () => {
           <motion.div className="text-center" variants={statVariants}>
             <div className="flex items-center justify-center gap-2 mb-2">
               <span className="text-gray-300 text-sm">Mentors from</span>
-            </div>
+            </div><div className="flex item-center justify-between">
             <div className="flex items-center gap-1 mb-2">
-              <span className="text-2xl">🇳🇬</span>
-              <span className="text-2xl">🇬🇧</span>
-              <span className="text-2xl">🇨🇦</span>
-              <span className="text-2xl">🇺🇸</span>
+              <Image
+                src={"/mentor/flags.png"}
+                alt="flag"
+                height={24}
+                width={104.73}
+                className="w-auto h-auto"/>
             </div>
-            <div className="text-3xl font-bold text-[#B6EB6A]">
-              10+ <span className="text-gray-300 text-lg font-normal">countries</span>
+            <div className="text-lg font-bold text-white">
+              10+ <span className="text-white text-lg font-normal">countries</span>
+            </div>
             </div>
           </motion.div>
         </motion.div>
@@ -162,7 +166,7 @@ const HelpTalentsGrow = () => {
         >
           <div className="relative rounded-2xl overflow-hidden shadow-2xl">
             <Image
-              src="/AboutImage.jpg"
+              src="/mentor/mentorHero.png"
               alt="Mentoring session video conference"
               width={800}
               height={450}
@@ -171,52 +175,7 @@ const HelpTalentsGrow = () => {
               blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
             />
 
-            {/* Video Conference UI Overlay */}
-            <motion.div
-              className="absolute top-4 right-4"
-              variants={fadeInUpVariants}
-            >
-              <div className="bg-[#B6EB6A] text-black px-3 py-1 rounded-full text-sm font-semibold">
-                Mentor
-              </div>
-            </motion.div>
-
-            {/* Bottom Controls Overlay */}
-            <motion.div
-              className="absolute bottom-4 left-1/2 transform -translate-x-1/2"
-              variants={fadeInUpVariants}
-            >
-              <div className="flex items-center gap-4 bg-black/50 backdrop-blur-md px-6 py-3 rounded-full">
-                <motion.button
-                  className="w-10 h-10 bg-gray-600 hover:bg-gray-500 rounded-full flex items-center justify-center transition-colors"
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
-                >
-                  <span className="text-white text-sm">🎤</span>
-                </motion.button>
-                <motion.button
-                  className="w-10 h-10 bg-gray-600 hover:bg-gray-500 rounded-full flex items-center justify-center transition-colors"
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
-                >
-                  <span className="text-white text-sm">📹</span>
-                </motion.button>
-                <motion.button
-                  className="w-10 h-10 bg-gray-600 hover:bg-gray-500 rounded-full flex items-center justify-center transition-colors"
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
-                >
-                  <span className="text-white text-sm">📱</span>
-                </motion.button>
-                <motion.button
-                  className="w-10 h-10 bg-red-600 hover:bg-red-500 rounded-full flex items-center justify-center transition-colors"
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
-                >
-                  <span className="text-white text-sm">✕</span>
-                </motion.button>
-              </div>
-            </motion.div>
+           
           </div>
         </motion.div>
       </div>

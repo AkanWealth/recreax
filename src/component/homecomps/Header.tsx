@@ -214,7 +214,7 @@ function Header() {
                 </div>
                  {/* ReCreaX Studio */}
                 <div className="flex flex-col rounded-xl transition-all duration-200 cursor-pointer group">
-                  <Link href="/recreaxStudio" className="flex flex-cols-2 gap-2">
+                  <Link href="/pathnership" className="flex flex-cols-2 gap-2">
                     <div className="flex items-center justify-center w-full h-full bg-[#E4FFE0] rounded-xl transition-colors">
                       <Image
                         src="/Group (4).png"

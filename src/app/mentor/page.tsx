@@ -7,12 +7,13 @@ import MentoringSteps from '@/component/mentorshipComps/MentoringSteps';
 import WaysToSupportAsMentor from '@/component/mentorshipComps/WaysToSupportAsMentor';
 export default function Program() {
     return (
-        <div className="min-h-screen">
+        <div className="w-full min-h-screen">
             <HelpTalentsGrow />
+            <MentorReasons />
             <MentoringSteps />
             <WaysToSupportAsMentor />
             <FaqComponent />
-           <MentorReasons />
+           
             <CtaSection />
 
         </div>

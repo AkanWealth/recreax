@@ -50,7 +50,8 @@ const BlogDetail: React.FC<BlogDetailProps> = ({ blog, onBack }) => {
       <div className="max-w-4xl mx-auto px-4 py-8">
         <div className="aspect-video rounded-lg overflow-hidden mb-8">
           {blog.image ? (
-            <Image src={blog.image} alt={blog.title} height={200} width={100} className="w-full h-full object-cover" />
+            <Image src={blog.image} alt={blog.title} height={385} width={1027}  quality={100}
+                priority className="w-full h-full object-cover" />
           ) : (
             <div className={`w-full h-full ${blog.gradient} flex items-center justify-center`}>
               <div className="w-20 h-20 bg-white bg-opacity-20 rounded-lg"></div>
