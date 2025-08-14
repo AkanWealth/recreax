@@ -261,10 +261,10 @@ function Header() {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="absolute top-[74px] left-0 right-0 bg-white shadow-lg rounded-lg w-full p-4 sm:hidden z-50">
+          <div className="absolute top-[74px] left-0 right-0 bg-[#12233D] shadow-lg rounded-lg w-full p-4 sm:hidden z-50">
             <div className="flex flex-col bg-light gap-4">
               <Link
-                className="font-medium font-plus-jakarta-sans text-sm text-gray-950"
+                className="font-medium font-plus-jakarta-sans text-sm text-white"
                 href="/"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
@@ -275,18 +275,18 @@ function Header() {
               <Accordion type="single" collapsible>
                 <AccordionItem value="programs">
                   <AccordionTrigger className="focus-visible:outline-none py-0 no-underline cursor-pointer">
-                    <p className="font-medium font-plus-jakarta-sans text-sm text-gray-950">
+                    <p className="font-medium font-plus-jakarta-sans text-sm text-white">
                       Programs
                     </p>
                   </AccordionTrigger>
                   <AccordionContent>
-                    <div className="p-4 bg-gray-50 rounded-lg flex flex-col gap-4">
+                    <div className="p-4 bg-white rounded-lg flex flex-col gap-4">
                       <Link
                         href="/recreax-internship"
                         className="flex flex-row gap-3 items-center justify-start"
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
-                        <div className="bg-blue-100 text-blue-600 w-8 h-8 p-1 flex items-center justify-center rounded-xl">
+                        <div className="bg-white w-8 h-8 p-1 flex items-center justify-center rounded-xl">
                           <Image
                             src="/progress.png"
                             alt="Internship Icon"
@@ -327,7 +327,7 @@ function Header() {
               </Accordion>
 
               <Link
-                className="font-medium font-plus-jakarta-sans text-sm text-gray-950"
+                className="font-medium font-plus-jakarta-sans text-sm text-white"
                 href="/mentor"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
@@ -338,14 +338,14 @@ function Header() {
               <Accordion type="single" collapsible>
                 <AccordionItem value="why-recreax">
                   <AccordionTrigger className="focus-visible:outline-none py-0 no-underline cursor-pointer">
-                    <p className="font-medium font-plus-jakarta-sans text-sm text-gray-950">
+                    <p className="font-medium font-plus-jakarta-sans text-sm text-white">
                       Why ReCreaX
                     </p>
                   </AccordionTrigger>
                   <AccordionContent>
-                    <div className="p-4 bg-gray-50 rounded-lg flex flex-col gap-2">
+                    <div className="p-4 bg-white rounded-lg flex flex-col gap-2">
                       <Link
-                        href="/blog"
+                        href="/aboutUs"
                         className="flex flex-row gap-3 items-center justify-start"
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
@@ -354,14 +354,15 @@ function Header() {
                         </div>
                         <div className="flex flex-col gap-1 items-start justify-start">
                           <p className="text-sm font-medium font-plus-jakarta-sans text-gray-950">
-                            Blog
+                            About us
                           </p>
                           <p className="text-xs font-plus-jakarta-sans text-gray-600">
                             Weekly insights to help you build smarter
                           </p>
                         </div>
                       </Link>
-                      <div
+                      <Link
+                        href="/contactus"
                         onClick={() => setIsModalOpen(true)}
                         className="flex flex-row gap-3 items-center justify-start cursor-pointer"
                       >
@@ -370,15 +371,15 @@ function Header() {
                         </div>
                         <div className="flex flex-col gap-1 items-start justify-start">
                           <p className="text-sm font-medium font-plus-jakarta-sans text-gray-950">
-                            Newsletter
+                            Contact us
                           </p>
                           <p className="text-xs font-plus-jakarta-sans text-gray-600">
                             Get curated founder tips in your inbox
                           </p>
                         </div>
-                      </div>
+                      </Link>
                       <Link
-                        href="/playbooks"
+                        href="/partnership"
                         className="flex flex-row gap-3 items-center justify-start"
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
@@ -387,7 +388,7 @@ function Header() {
                         </div>
                         <div className="flex flex-col gap-1 items-start justify-start">
                           <p className="text-sm font-medium font-plus-jakarta-sans text-gray-950">
-                            Playbooks
+                          Partnership
                           </p>
                           <p className="text-xs font-plus-jakarta-sans text-gray-600">
                             Step-by-step guides for product execution
@@ -400,38 +401,46 @@ function Header() {
               </Accordion>
 
               <Link
-                className="font-medium font-plus-jakarta-sans text-sm text-gray-950"
+                className="font-medium font-plus-jakarta-sans text-sm text-white"
                 href="/blog"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Blog
               </Link>
 
-              <Button
-                className="border border-gray-300 text-sm font-medium rounded-lg py-[12px] px-4 hover:bg-gray-50 text-gray-900 w-full cursor-pointer bg-transparent"
-              >
-               Login
-              </Button>
-              <Button
-                className="bg-[#00FFFF] text-sm font-medium rounded-lg py-[12px] px-4 hover:bg-[#00FFFF]/80 text-[#12233D] w-full cursor-pointer"
-              >
-                Join ReCreaX
-              </Button>
+               <Link href="https://talents.recreax.com/log-in" passHref>
+                <Button
+                  className="border border-gray-300 text-sm font-medium rounded-lg py-[12px] px-4 hover:bg-gray-50 text-white w-full cursor-pointer bg-transparent"
+                >
+                  Login
+                </Button>
+              </Link>
+              <Link href="https://talents.recreax.com/authorization" passHref>
+                <Button
+                  className="bg-[#00FFFF] text-sm font-medium rounded-lg py-[12px] px-4 hover:bg-[#00FFFF]/80 text-[#12233D] w-full cursor-pointer"
+                >
+                  Join ReCreaX
+                </Button>
+              </Link>
             </div>
           </div> 
         )}
 
         <div className="hidden sm:flex items-center gap-2">
-          <Button
-            className="border border-white text-sm font-medium rounded-lg py-[12px] px-4 hover:bg-[#12233D]/80 text-white bg-transparent"
-          >
-            Login
-          </Button>
-          <Button
-            className="bg-[#00FFFF] text-sm font-medium rounded-lg py-[12px] px-4 hover:bg-[#00FFFF]/80 text-[#12233D] w-full sm:w-auto"
-          >
-            Join ReCreaX
-          </Button>
+          <Link href="https://talents.recreax.com/log-in" passHref>
+            <Button
+              className="border border-white text-sm font-medium rounded-lg py-[12px] px-4 hover:bg-[#12233D]/80 text-white bg-transparent"
+            >
+              Login
+            </Button>
+          </Link>
+          <Link href="https://talents.recreax.com/authorization" passHref>
+            <Button
+              className="bg-[#00FFFF] text-sm font-medium rounded-lg py-[12px] px-4 hover:bg-[#00FFFF]/80 text-[#12233D] w-full sm:w-auto"
+            >
+              Join ReCreaX
+            </Button>
+          </Link>
         </div>
       </div>
       {/* {isModalOpen && (
