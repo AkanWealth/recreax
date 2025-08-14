@@ -7,7 +7,7 @@ import IntershipSection from "@/component/program/IntershipSection";
 import TestimonialsSection from "@/component/program/Testimonials";
 export default function Program () {
   return (
-   <div  className="min-h-screen">
+   <div  className="flex flex-col w-full">
      <CareerSection />
    <IntershipSection />
    <TestimonialsSection />

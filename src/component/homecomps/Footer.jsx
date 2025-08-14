@@ -185,8 +185,8 @@ function Footer() {
             </p>
           </div>
         </div>
-        <div><h1 className="text-[165px] text-center text-white opacity-20"> ReCreax Talent
-          </h1></div>
+        {/* <div><h1 className="lg:text-[165px] s text-center text-white opacity-20"> ReCreax Talent
+          </h1></div> */}
       </footer>
     </div>
   );

@@ -9,7 +9,7 @@ import NewsletterSection from '@/component/homecomps/contactComponent/Subcribe';
 
 export default function Program () {
   return (
-   <div  className="min-h-screen">
+   <div  className="flex flex-col w-full">
    <HeroSection />
     <ContactForm />
     <NewsletterSection />
