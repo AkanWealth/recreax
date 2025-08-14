@@ -99,7 +99,7 @@ const CareerSection = () => {
         viewport={{ once: true }}
       >
         <Image
-          src="/Group36460.png" // Replace with your desired background image path
+          src="/Group36460.png"
           alt="Decorative Background"
           fill
           className="object-cover"
@@ -147,114 +147,38 @@ const CareerSection = () => {
           </motion.span>
         </motion.div>
 
+        {/* Single Hero Image with Enhanced Animation */}
         <motion.div
-          className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-8 mb-12 sm:mb-16"
+          className="flex justify-center items-center mb-12 sm:mb-16"
           variants={containerVariants}
         >
-          {/* Left Image with Background */}
           <motion.div
-            className="bg-[#1B2C45] rounded-2xl overflow-hidden shadow-xl transform relative"
+            className="relative group max-w-4xl w-full"
             variants={imageVariants}
-            whileHover={{ y: -10, transition: { duration: 0.3 } }}
+            whileHover={{ 
+              scale: 1.02, 
+              transition: { duration: 0.4, ease: "easeOut" } 
+            }}
           >
-            <div className="absolute inset-0 bg-gradient-to-br from-[#1B2C45] via-[#243856] to-[#2d4467] opacity-90"></div>
-            <div className="absolute inset-0">
-              <div className="absolute top-4 left-4 w-20 h-20 border border-white/20 rounded-full"></div>
-              <div className="absolute bottom-4 right-4 w-16 h-16 border border-white/10 rounded-lg rotate-45"></div>
-              <div className="absolute top-1/2 right-6 w-2 h-2 bg-white/30 rounded-full"></div>
+            {/* Main Image Container */}
+            <div className="relative w-full h-full">
+              <motion.div
+                initial={{ scale: 1.1 }}
+                animate={{ scale: 1 }}
+                transition={{ duration: 1.2, ease: "easeOut" }}
+                className="w-full h-full"
+              >
+                <Image
+                  src="/Group1000012026.svg"
+                  alt="REX Career Platform Experience"
+                  height={158.88916015625}
+                  width={350}
+                  quality={90}
+                  priority
+                  className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+              </motion.div>
             </div>
-            <Image
-              src="/Program4.jpg"
-              alt="Team collaboration"
-              height={288}
-              width={288}
-              quality={90}
-              priority
-              className="w-[346px] h-[395.32px] object-cover relative z-10"
-            />
-          </motion.div>
-
-          {/* /* Center Image with Profile Pictures */ }
-          <motion.div
-            className="flex flex-col gap-2 rounded-2xl overflow-hidden shadow-xl"
-            variants={imageVariants}
-            whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
-          >
-            <motion.div
-              className="flex justify-center items-center gap-2 mb-6 sm:mb-4"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6, duration: 0.6 }}
-              viewport={{ once: true }}
-            >
-              <div className="flex -space-x-2">
-                {[
-                  "/profile/profile1.jpg",
-                  "/profile/profile2.png",
-                  "/profile/profile3.jpg",
-                  "/profile/profile4.jpg",
-                  "/profile/profile5.jpg",
-                  "/profile/profile6.png",
-                ].map((src, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ scale: 0, rotate: -180 }}
-                    whileInView={{ scale: 1, rotate: 0 }}
-                    transition={{
-                      delay: 0.7 + index * 0.1,
-                      duration: 0.4,
-                      type: "spring",
-                      stiffness: 200,
-                    }}
-                    viewport={{ once: true }}
-                  >
-                    <Image
-                      src={src}
-                      alt={`Talent ${index + 1}`}
-                      height={80}
-                      width={80}
-                      quality={90}
-                      priority
-                      className="w-10 h-10 rounded-full border-2 border-white object-cover"
-                    />
-                  </motion.div>
-                ))}
-              </div>
-              <span className="text-xs sm:text-sm text-white ml-2">1,000+ talents</span>
-            </motion.div>
-            <Image
-              src="/Program1.jpg"
-              alt="Professional working"
-              height={348}
-              width={288}
-              quality={90}
-              priority
-              className="w-[346px] h-[395.32px] object-cover rounded-2xl"
-            />
-          </motion.div>
-
-          {/* /* Right Image with Background */}
-          <motion.div
-            className="bg-[#CEFDFF] rounded-2xl overflow-hidden shadow-xl transform relative"
-            variants={imageVariants}
-            whileHover={{ y: -10, transition: { duration: 0.3 } }}
-          >
-            <div className="absolute inset-0 bg-gradient-to-tl from-[#CEFDFF] via-[#B8F5F7] to-[#A3EDF0] opacity-90"></div>
-            <div className="absolute inset-0">
-              <div className="absolute top-6 right-6 w-24 h-24 border-2 border-[#00FFFF]/30 rounded-full"></div>
-              <div className="absolute bottom-8 left-6 w-12 h-12 bg-[#00FFFF]/20 rounded-lg rotate-12"></div>
-              <div className="absolute top-1/3 left-4 w-3 h-3 bg-[#00FFFF]/40 rounded-full"></div>
-              <div className="absolute bottom-1/4 right-8 w-8 h-8 border border-[#00FFFF]/25 rotate-45"></div>
-            </div>
-            <Image
-              src="/Program2.jpg"
-              alt="Mentoring session"
-              height={348}
-              width={288}
-              quality={90}
-              priority
-              className="w-[346px] h-[395.32px] object-cover relative z-10"
-            />
           </motion.div>
         </motion.div>
 

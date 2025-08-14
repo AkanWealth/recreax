@@ -36,7 +36,7 @@ const HeroSection = () => {
         <div className="relative max-w-4xl mx-auto">
           <div className="relative rounded-2xl overflow-hidden shadow-2xl">
             <Image
-              src="/aboutUS2.jpg"
+              src="/about/AboutusHero.svg"
               alt="Mentoring session video conference"
               width={800}
               height={450}
@@ -46,11 +46,11 @@ const HeroSection = () => {
             />
             
             {/* Video Conference UI Overlay */}
-            <div className="absolute top-2 right-4">
+            {/* <div className="absolute top-2 right-4">
               <div className="bg-[#B6EB6A] text-black px-3 py-1 rounded-full text-sm font-semibold">
                 ReCreaX Talent
               </div>
-            </div>
+            </div> */}
             
             
           </div>

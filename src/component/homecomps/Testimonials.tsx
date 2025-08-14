@@ -36,7 +36,7 @@ const TestimonialsSection = () => {
 
   const cardTestimonials = [
     {
-      quote: "This experience strengthened my technical expertise, expanded my industry knowledge and given me real world exposure to collaborative problem-solving.",
+      quote: "This experience strengthened my technical expertise, expanded my industry knowledge and given me real  world exposure to collaborative problem-solving.",
       name: "Philip",
       role: "Backend Developer"
     },
@@ -59,7 +59,31 @@ const TestimonialsSection = () => {
       quote: "Working on this project opened me to many opportunities. ReCreaX helped me stand alone. Now, I'm proud of myself and can do any task given to me as a backend developer.",
       name: "Aliyu",
       role: "Backend Developer"
+    },
+     {
+      quote: "This project made me build my portfolio and gained valuable skills. It impacted my career and was able to build collaboration with other developers.",
+      name: "Amarachi",
+      role: "Backend Developer"
+    },
+     {
+      quote: "Working on this project opened me to many opportunities. ReCreaX helped me stand alone. Now, I'm proud of myself and can do any task given to me as a backend developer.",
+      name: "Aliyu",
+      role: "Backend Developer"
+    },
+     {
+
+      quote: "This experience has strengthened both my technical and soft skills in UI/UX design.",
+      name: "Johnpaul",
+      role: "UI/uX Designer"
+    },
+    {
+
+      quote: "My ReCreaX journey has greatly improved my work ethic. I now know what it means to work as a team.",
+      name: "Emmanuel Anosike",
+      role: "Project Manager"
     }
+    
+
   ];
 
   const nextTestimonial = useCallback(() => {
