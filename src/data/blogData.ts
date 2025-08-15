@@ -8,7 +8,7 @@ export const blogPosts: BlogPost[] = [
     categoryColor: "text-[#003267] border border-[#003267]",
     date: "April 8, 2025",
     readTime: "3 min read",
-    image: "/blog4.jpg",
+    image: "/svg/Logo.svg",
     gradient: "bg-gradient-to-br from-amber-600 to-orange-700",
     excerpt: "Breaking into tech is no longer just about talent. It's about access to tools, training, and real experience.",
     content: `
@@ -30,7 +30,7 @@ export const blogPosts: BlogPost[] = [
     categoryColor: "text-[#00671F] border border-[#00671F]",
     date: "April 5, 2025",
     readTime: "5 min read",
-    image: "/blog1.jpg",
+    image: "/svg/Logo(1).svg",
     gradient: "bg-gradient-to-br from-purple-400 to-pink-400",
     excerpt: "Learn from real professionals who successfully transitioned into tech careers.",
     content: `
@@ -50,7 +50,7 @@ export const blogPosts: BlogPost[] = [
     categoryColor: "text-[#560067] border border-[#560067]",
     date: "April 3, 2025",
     readTime: "4 min read",
-    image: "/blog3.png",
+    image: "/svg/Logo(2).svg",
     gradient: "bg-gradient-to-br from-orange-200 to-orange-300",
     excerpt: "Discover the top skills that every developer should master in 2025.",
     content: `
@@ -70,7 +70,7 @@ export const blogPosts: BlogPost[] = [
     categoryColor: "text-[#558300] border border-[#558300]",
     date: "April 1, 2025",
     readTime: "3 min read",
-    image: "/blog5.jpg",
+    image: "/svg/Logo(3).svg",
     gradient: "bg-gradient-to-br from-lime-400 to-green-600",
     excerpt: "Master the art of remote work with these proven strategies.",
     content: `

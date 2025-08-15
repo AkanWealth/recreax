@@ -1,14 +1,12 @@
 import React from "react";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
-import { Bricolage_Grotesque, Plus_Jakarta_Sans } from "next/font/google";
+import {Plus_Jakarta_Sans } from "next/font/google";
 import { Button } from "../ui/button";
+import { RiSparklingLine } from "react-icons/ri";
 
 
-const bricolage = Bricolage_Grotesque({
-    weight: ["700"], // Bold
-    subsets: ["latin"],
-});
+
 const plusJakarta = Plus_Jakarta_Sans({
     subsets: ["latin"],
     weight: ["400"],
@@ -26,8 +24,8 @@ function CtaSection() {
             <div className="max-w-8xl mx-auto flex flex-col lg:flex-row items-center gap-12">
                 {/* Left Content */}
                 <div className="flex-1 text-white">
-                    <h2 className={`text-xl sm:text-lg lg:text-5xl font-bold mb-4 ${bricolage.className}`}>
-                        You&apos;ve Learned Enough.
+                    <h2 className={`text-xl sm:text-lg lg:text-5xl font-bold mb-4 `}>
+                         Let&apos;s Create the Future of 
                     </h2>
                     <div className="flex items-center gap-4 mb-8">
                         {/* <div className="w-12 h-0.5 bg-[#00D4FF]"></div> */}
@@ -39,8 +37,8 @@ function CtaSection() {
                             alt="Arrow Logo"
                             className=""
                         />
-                        <h3 className={`text-3xl sm:text-4xl lg:text-5xl font-bold ${bricolage.className}`}>
-                            It&apos;s Time to Work
+                        <h3 className={`text-3xl sm:text-4xl lg:text-5xl font-bold`}>
+                            Tech Talent Together
                         </h3>
                     </div>
                     <p className={`"text-lg sm:text-sm lg:text-lg text-white mb-8 max-w-lg" ${plusJakarta.className}`}>
@@ -49,7 +47,7 @@ function CtaSection() {
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4">
                         <Button className="bg-[#00D4FF] text-[#12233D] px-8 py-4 rounded-lg font-semibold hover:bg-[#00C4EF] transition-colors flex items-center gap-2">
-                            <span>✨</span>
+                            <span><RiSparklingLine className="w-5 h-5" /></span>
                             Try REX Free
                         </Button>
                         <Button

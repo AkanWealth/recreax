@@ -134,7 +134,7 @@
 
 import React, { useState } from 'react';
 import { ArrowDown } from 'lucide-react';
-import { Plus_Jakarta_Sans, Bricolage_Grotesque} from "next/font/google";
+import { Plus_Jakarta_Sans} from "next/font/google";
 
 const plusJakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -142,10 +142,7 @@ const plusJakarta = Plus_Jakarta_Sans({
   variable: "--font-plus-jakarta-sans",
 });
 
-const bricolage = Bricolage_Grotesque({
-  weight: ["700"],
-  subsets: ["latin"],
-});
+
 
 interface FAQItem {
   question: string;
@@ -203,7 +200,7 @@ const FAQItem: React.FC<{ item: FAQItem; index: number }> = ({ item}) => {
   };
 
   return (
-    <div className={`border-b border-gray-200 last:border-b-0 py-6 ${bricolage.className}`}>
+    <div className={`border-b border-gray-200 last:border-b-0 py-6 `}>
       <div 
         className="mb-4 flex items-center justify-between cursor-pointer"
         onClick={toggleOpen}

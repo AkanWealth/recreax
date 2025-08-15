@@ -114,22 +114,22 @@ function Footer() {
                 <h3 className="font-medium text-[#00D4FF] mb-4 sm:mb-6 text-base">Pages</h3>
                 <ul className="space-y-2 sm:space-y-3">
                   <li>
-                    <Link href="/rex-ai" className="text-white hover:text-white transition-colors text-sm">
+                    <Link  href="https://talents.recreax.com/log-in" passHref className="text-white hover:text-white transition-colors text-sm">
                       Rex AI
                     </Link>
                   </li>
                   <li>
-                    <Link href="/recreax-internship" className="text-white hover:text-white transition-colors text-sm">
+                    <Link href="/program" className="text-white hover:text-white transition-colors text-sm">
                       ReCreaX Internship
                     </Link>
                   </li>
                   <li>
-                    <Link href="/studio" className="text-white hover:text-white transition-colors text-sm">
+                    <Link href="/recreaxStudio" className="text-white hover:text-white transition-colors text-sm">
                       Studio
                     </Link>
                   </li>
                   <li>
-                    <Link href="/about-us" className="text-white hover:text-white transition-colors text-sm">
+                    <Link href="/aboutUs" className="text-white hover:text-white transition-colors text-sm">
                       About Us
                     </Link>
                   </li>
@@ -142,7 +142,7 @@ function Footer() {
                 <ul className="space-y-2 sm:space-y-3">
                   <li>
                     <Link 
-                      href="https://blog.recreax.com/blog/"
+                      href="/blog"
                       target="_blank"
                       rel="noopener noreferrer" 
                       className="text-white hover:text-white transition-colors text-sm"
@@ -151,7 +151,7 @@ function Footer() {
                     </Link>
                   </li>
                   <li>
-                    <Link href="/contact-us" className="text-white hover:text-white transition-colors text-sm">
+                    <Link href="/contactus" className="text-white hover:text-white transition-colors text-sm">
                       Contact Us
                     </Link>
                   </li>
@@ -160,11 +160,11 @@ function Footer() {
                       FAQ
                     </Link>
                   </li>
-                  <li>
+                  {/* <li>
                     <Link href="/newsletter" className="text-white hover:text-white transition-colors text-sm">
                       Newsletter
                     </Link>
-                  </li>
+                  </li> */}
                 </ul>
               </div>
             </div>
@@ -173,7 +173,7 @@ function Footer() {
           {/* Bottom Section */}
           <div className="pt-6 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
             <div className="flex flex-col sm:flex-row gap-2 sm:gap-6 text-sm order-2 sm:order-1">
-              <Link href="/terms-of-service" className="text-white hover:text-white transition-colors">
+              <Link href="/privacy-policy" className="text-white hover:text-white transition-colors">
                 Terms of Service
               </Link>
               <Link href="/privacy-policy" className="text-white hover:text-white transition-colors">

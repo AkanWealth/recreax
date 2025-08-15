@@ -138,7 +138,7 @@ const TestimonialsSection = () => {
                 </div>
               </div>
               <div className="text-left">
-                <div className="font-bold text-slate-800 text-lg">
+                <div className="font-semibold text-slate-800 text-lg">
                   {mainTestimonials[currentTestimonial].name}
                 </div>
                 <div className="text-slate-700 font-medium">
@@ -165,7 +165,7 @@ const TestimonialsSection = () => {
         </div>
         
         {/* Section title */}
-        <h2 className="text-4xl md:text-5xl font-bold text-center text-slate-800 mb-16 leading-tight">
+        <h2 className="text-4xl md:text-5xl font-semibold text-center text-slate-800 mb-16 leading-tight">
           Real impact, no code: hear from the ReCreaX<br />
           community
         </h2>

@@ -1,10 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
-import { Bricolage_Grotesque, Plus_Jakarta_Sans } from 'next/font/google';
-const bricolage = Bricolage_Grotesque({
-  weight: ['700'], // Bold
-  subsets: ['latin'],
-});
+import {  Plus_Jakarta_Sans } from 'next/font/google';
+
 const plusJakarta = Plus_Jakarta_Sans({
   subsets: ['latin'],
   weight: ['400'],
@@ -14,7 +11,7 @@ const plusJakarta = Plus_Jakarta_Sans({
 const InternshipProgram = () => (
   <section className="bg-white py-20 px-4 sm:px-8">
     <div className="max-w-6xl mx-auto text-center">
-      <h2 className={`text-4xl sm:text-6xl font-bold text-[#12233D] mb-4 ${bricolage.className}`}>
+      <h2 className={`text-4xl sm:text-6xl font-bold text-[#12233D] mb-4 `}>
         Inside the <span className="">ReCreax</span>
       </h2>
       <div className="flex items-center justify-center mb-8">
@@ -26,7 +23,7 @@ const InternshipProgram = () => (
         quality={100}
         priority
         className='w-auto h-auto'/>
-        <span className={`text-4xl sm:text-6xl font-bold text-[#003267] ${bricolage.className}`}>Internship Program</span>
+        <span className={`text-4xl sm:text-6xl font-bold text-[#003267] `}>Internship Program</span>
       </div>
       <p className={`text-lg text-gray-600 mb-16 max-w-2xl mx-auto ${plusJakarta.className}`}>
         Your 3-month journey from learner to confident professional

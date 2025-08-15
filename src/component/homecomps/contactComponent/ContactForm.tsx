@@ -1,10 +1,9 @@
 "use client";
 import React, { useState } from 'react';
-import { Mail } from 'lucide-react';
-import { FaInstagram,FaLinkedin, FaTiktok} from 'react-icons/fa';
+import { Mail, Copy } from 'lucide-react';
+import { FaInstagram, FaLinkedin, FaTiktok } from 'react-icons/fa';
 import { FaXTwitter } from "react-icons/fa6";
-import { Copy } from 'lucide-react';
-import { Plus_Jakarta_Sans, Bricolage_Grotesque} from "next/font/google";
+import { Plus_Jakarta_Sans, Bricolage_Grotesque } from "next/font/google";
 
 const plusJakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -34,6 +33,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ onSubmitSuccess }) => {
     message: ''
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [copyStatus, setCopyStatus] = useState<{ [key: string]: boolean }>({});
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -43,7 +43,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ onSubmitSuccess }) => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     // Validate form
     if (!formData.fullName || !formData.email || !formData.inquiryType || !formData.message) {
@@ -51,24 +51,50 @@ const ContactForm: React.FC<ContactFormProps> = ({ onSubmitSuccess }) => {
       return;
     }
 
-    // Simulate form submission
-    setIsSubmitted(true);
-    
-    // Call parent callback if provided
-    if (onSubmitSuccess) {
-      onSubmitSuccess(formData);
-    }
-
-    // Reset form after 5 seconds
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setFormData({
-        fullName: '',
-        email: '',
-        inquiryType: '',
-        message: ''
+    try {
+      // Send form data to Formspree
+      const response = await fetch('https://formspree.io/f/xblkqeol', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(formData)
       });
-    }, 5000);
+
+      if (response.ok) {
+        setIsSubmitted(true);
+        if (onSubmitSuccess) {
+          onSubmitSuccess(formData);
+        }
+        // Reset form after 5 seconds
+        setTimeout(() => {
+          setIsSubmitted(false);
+          setFormData({
+            fullName: '',
+            email: '',
+            inquiryType: '',
+            message: ''
+          });
+        }, 5000);
+      } else {
+        alert('Failed to submit the form. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      alert('An error occurred while submitting the form. Please try again.');
+    }
+  };
+
+  const handleCopy = async (email: string) => {
+    try {
+      await navigator.clipboard.writeText(email);
+      setCopyStatus(prev => ({ ...prev, [email]: true }));
+      setTimeout(() => setCopyStatus(prev => ({ ...prev, [email]: false })), 2000);
+    } catch (error) {
+      console.error('Failed to copy:', error);
+      alert('Failed to copy email to clipboard.');
+    }
   };
 
   if (isSubmitted) {
@@ -77,8 +103,10 @@ const ContactForm: React.FC<ContactFormProps> = ({ onSubmitSuccess }) => {
         <div className="max-w-2xl w-full">
           {/* Header */}
           <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">Send Us a Message</h1>
-            <p className="text-gray-600 text-lg">
+            <h1 className={`text-4xl md:text-5xl font-bold text-slate-900 mb-6 ${bricolage.className}`}>
+              Send Us a Message
+            </h1>
+            <p className={`text-gray-600 text-lg ${plusJakarta.className}`}>
               Fill out the form and we&apos;ll respond within 24-48 hours. Select the reason for your message<br />
               so we can get it to the right team faster.
             </p>
@@ -86,7 +114,6 @@ const ContactForm: React.FC<ContactFormProps> = ({ onSubmitSuccess }) => {
 
           {/* Success Message */}
           <div className="bg-[#F1FAFC] rounded-2xl p-12 text-center shadow-sm">
-            
             <h2 className={`text-4xl font-bold text-slate-900 mb-6 leading-tight ${bricolage.className}`}>
               Thank you! Your submission<br />
               has been received!
@@ -95,7 +122,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ onSubmitSuccess }) => {
               We&apos;ll get back to you shortly.
             </p>
           </div>
-       </div> 
+        </div>
       </div>
     );
   }
@@ -105,9 +132,11 @@ const ContactForm: React.FC<ContactFormProps> = ({ onSubmitSuccess }) => {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12 pt-12">
-          <h1 className={`text-4xl md:text-5xl font-bold text-slate-900 mb-6 ${bricolage.className}`}>Send Us a Message</h1>
+          <h1 className={`text-4xl md:text-5xl font-bold text-slate-900 mb-6 ${bricolage.className}`}>
+            Send Us a Message
+          </h1>
           <p className={`text-gray-600 text-lg max-w-3xl mx-auto ${plusJakarta.className}`}>
-            Fill out the form and we&apos;ll respond within 24-48 hours. Select the reason for your message 
+            Fill out the form and we&apos;ll respond within 24-48 hours. Select the reason for your message
             so we can get it to the right team faster.
           </p>
         </div>
@@ -175,7 +204,6 @@ const ContactForm: React.FC<ContactFormProps> = ({ onSubmitSuccess }) => {
                     <option value="Metorship">Metorship Interest</option>
                     <option value="Media/PR">Media/PR Partnership Request</option>
                     <option value="Technical">Technical Support</option>
-
                   </select>
                 </div>
 
@@ -209,30 +237,48 @@ const ContactForm: React.FC<ContactFormProps> = ({ onSubmitSuccess }) => {
           {/* Contact Info Panel */}
           <div className="lg:col-span-1">
             <div className="bg-[#D2F0F4] border-b-2 border-[#12233D] rounded-2xl p-8 h-fit">
-              <h3 className="text-xl text-[[#12233D]] mb-6">Connect with us online</h3>
+              <h3 className="text-xl text-[#12233D] mb-6">Connect with us online</h3>
               
               {/* Social Icons */}
               <div className="flex gap-2 mb-8">
-                <div className="w-10 h-10  rounded-lg flex items-center justify-center">
+                <div className="w-10 h-10 rounded-lg flex items-center justify-center">
                   <FaInstagram className="w-5 h-5 text-[#12233D]" />
                 </div>
-                <div className="w-10 h-10  rounded-lg flex items-center justify-center">
+                <div className="w-10 h-10 rounded-lg flex items-center justify-center">
                   <FaXTwitter className="w-5 h-5 text-[#12233D]" />
                 </div>
-                <div className="w-10 h-10  rounded-lg flex items-center justify-center">
+                <div className="w-10 h-10 rounded-lg flex items-center justify-center">
                   <FaLinkedin className="w-5 h-5 text-[#12233D]" />
                 </div>
-                <div className="w-10 h-10  rounded-lg flex items-center justify-center">
+                <div className="w-10 h-10 rounded-lg flex items-center justify-center">
                   <FaTiktok className="w-5 h-5 text-[#12233D]" />
                 </div>
               </div>
 
               <div className="space-y-6">
                 <div>
-                  <h4 className="text-sm  text-slate-900 mb-3">Email Us</h4>
+                  <h4 className="text-sm text-slate-900 mb-3">Email Us</h4>
                   <div className="space-y-2">
-                    <p className="flex text-base text-[#060C15] font-semibold">info@recreax.com <span><Copy className='w-3 h-3 text-[#003267]'/></span></p>
-                    <p className="flex text-base text-[#060C15] font-semibold">support@recreax.com <span><Copy className='w-3 h-3 text-[#003267]'/></span></p>
+                    <p className="flex items-center text-base text-[#060C15] font-semibold">
+                      info@recreax.com
+                      <button
+                        onClick={() => handleCopy('info@recreax.com')}
+                        className="ml-2"
+                        title="Copy email"
+                      >
+                        <Copy className={`w-3 h-3 ${copyStatus['info@recreax.com'] ? 'text-green-500' : 'text-[#003267]'}`} />
+                      </button>
+                    </p>
+                    <p className="flex items-center text-base text-[#060C15] font-semibold">
+                      support@recreax.com
+                      <button
+                        onClick={() => handleCopy('support@recreax.com')}
+                        className="ml-2"
+                        title="Copy email"
+                      >
+                        <Copy className={`w-3 h-3 ${copyStatus['support@recreax.com'] ? 'text-green-500' : 'text-[#003267]'}`} />
+                      </button>
+                    </p>
                   </div>
                 </div>
 

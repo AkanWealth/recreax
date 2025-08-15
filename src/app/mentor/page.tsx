@@ -7,7 +7,7 @@ import MentoringSteps from '@/component/mentorshipComps/MentoringSteps';
 import WaysToSupportAsMentor from '@/component/mentorshipComps/WaysToSupportAsMentor';
 export default function Program() {
     return (
-        <div className="w-full min-h-screen">
+        <div className="flex flex-col w-full">
             <HelpTalentsGrow />
             <MentorReasons />
             <MentoringSteps />

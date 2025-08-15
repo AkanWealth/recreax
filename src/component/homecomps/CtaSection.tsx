@@ -1,17 +1,15 @@
 "use client";
-import React, { useRef, useEffect } from "react";
+import React, { useRef } from "react";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
-import { Bricolage_Grotesque, Plus_Jakarta_Sans } from "next/font/google";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import { Button } from "../ui/button";
 import { RiSparklingLine } from "react-icons/ri";
 import { motion, useInView, useScroll, useTransform, Variants } from "framer-motion";
-import Lottie, { LottieRefCurrentProps } from "lottie-react";
+import Link from "next/link";
+// import Lottie, { LottieRefCurrentProps } from "lottie-react";
 
-const bricolage = Bricolage_Grotesque({
-  weight: ["700"],
-  subsets: ["latin"],
-});
+
 const plusJakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
   weight: ["400"],
@@ -27,7 +25,6 @@ const CtaSection = () => {
     offset: ["start end", "end start"],
   });
 
-  const parallaxY = useTransform(scrollYProgress, [0, 1], [30, -30]);
   const imageScale = useTransform(scrollYProgress, [0, 1], [1, 1.05]);
 
   const containerVariants: Variants = {
@@ -61,13 +58,13 @@ const CtaSection = () => {
             <motion.div variants={itemVariants} className="flex-1 text-white text-center lg:text-left">
               <motion.h2
                 variants={itemVariants}
-                className={`text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold mb-3 sm:mb-4 leading-tight ${bricolage.className}`}
+                className={`text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold mb-3 sm:mb-4 leading-tight `}
               >
                 You&apos;ve Learned Enough.
               </motion.h2>
               
               <motion.div variants={itemVariants} className="flex items-center justify-center lg:justify-start gap-2 sm:gap-4 mb-6 sm:mb-8">
-                <h3 className={`text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold ${bricolage.className}`}>
+                <h3 className={`text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold `}>
                   It&apos;s Time to Work
                 </h3>
               </motion.div>
@@ -84,10 +81,13 @@ const CtaSection = () => {
                   asChild
                   className="bg-[#00D4FF] text-[#12233D] px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold hover:bg-[#00C4EF] transition-all duration-200 flex items-center justify-center gap-2 text-sm sm:text-base"
                 >
+                <Link href="https://talents.recreax.com/authorization" passHref>
+
                   <motion.button whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
                     <RiSparklingLine className="w-4 h-4 sm:w-5 sm:h-5" />
                     Try REX Free
                   </motion.button>
+                </Link>
                 </Button>
                 <Button
                   asChild
@@ -108,15 +108,15 @@ const CtaSection = () => {
               className="flex-1 relative w-full lg:w-auto mt-4 lg:mt-0"
               style={{ scale: imageScale }}
             >
-              <div className="relative left-10 top-10 w-full max-w-sm mx-auto lg:max-w-md">
-                <div className="relative w-full aspect-[4/5] lg:aspect-[3/4]">
+              <div className="relative left-5 top-10 lg:left-30 lg:top-20 sm:left-10 sm:top-10 w-full max-w-sm mx-auto lg:max-w-md">
+                <div className="relative w-full aspect-[4/5] lg:aspect-[4/4]">
                   <div className="w-full h-full rounded-xl overflow-hidden relative">
                     <Image
                       src="/mentor/Lady.png"
                       alt="Woman with laptop"
                       fill
-                      className="object-cover object-center"
-                      sizes="(max-width: 640px) 90vw, (max-width: 1024px) 50vw, 40vw"
+                      className="w-auto h-auto object-cover object-center"
+                      // sizes="(max-width: 640px) 90vw, (max-width: 1024px) 50vw, 40vw"
                     />
                   </div>
                 </div>

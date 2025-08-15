@@ -1,11 +1,15 @@
 "use client";
-import { Bricolage_Grotesque, Plus_Jakarta_Sans } from "next/font/google";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import React, { useState, useEffect, useRef } from "react";
 import { RiSparkling2Line, RiSparklingFill, RiSendPlaneFill } from "react-icons/ri";
 import { FaLongArrowAltRight } from "react-icons/fa";
 import { GoArrowUpLeft } from "react-icons/go";
 import Image from "next/image";
 import { motion, useInView, useScroll, useTransform, Variants } from "framer-motion";
+import Link from "next/link";
+
+
+
 
 const plusJakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -13,10 +17,7 @@ const plusJakarta = Plus_Jakarta_Sans({
   variable: "--font-plus-jakarta-sans",
 });
 
-const bricolage = Bricolage_Grotesque({
-  weight: ["700"],
-  subsets: ["latin"],
-});
+
 
 const HeroSection = () => {
   const [currentRole, setCurrentRole] = useState(0);
@@ -62,7 +63,7 @@ const HeroSection = () => {
   return (
     <motion.section
       ref={sectionRef}
-      className={`relative overflow-visible bg-[#1a2b47] text-white py-20 px-4 sm:px-8 flex flex-col items-center text-center ${bricolage.className}`}
+      className={`relative overflow-visible bg-[#1a2b47] text-white py-20 px-4 sm:px-8 flex flex-col items-center text-center`}
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
       variants={containerVariants}
@@ -88,6 +89,7 @@ const HeroSection = () => {
           Meet REX, your AI career mentor that takes you beyond courses into real-world readiness. Practice with case studies, build stronger resumes, prep for interviews, and discover your career path.
         </motion.p>
         <motion.div variants={itemVariants} className={`flex flex-col sm:flex-row gap-4 justify-center items-center ${plusJakarta.className}`}>
+          <Link href="https://talents.recreax.com/log-in" passHref>
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -95,6 +97,9 @@ const HeroSection = () => {
           >
             Try REX Free <RiSparkling2Line className="text-xl" />
           </motion.button>
+          </Link>
+          <Link href="https://talents.recreax.com/log-in" passHref>
+          
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -102,6 +107,8 @@ const HeroSection = () => {
           >
             Join Talent Community <FaLongArrowAltRight className="text-xl" />
           </motion.button>
+          </Link>
+
         </motion.div>
       </motion.div>
 

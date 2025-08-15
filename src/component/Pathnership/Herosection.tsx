@@ -1,6 +1,7 @@
 import React from "react";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import Image from "next/image";
+import Link from "next/link";
 import { motion, Variants} from "framer-motion";
 import { RiSparkling2Line } from "react-icons/ri";
 
@@ -55,14 +56,16 @@ const HeroSection = () => {
                   className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16"
                   variants={containerVariants}
                 >
+                  <Link href="/partnership">
         <motion.button
             className="bg-[#00FFFF] text-black hover:bg-[#00c4ef] px-8 py-4 rounded-lg font-semibold text-lg flex items-center gap-2 transition-colors"
             variants={buttonVariants}
             whileHover="hover"
             whileTap={{ scale: 0.95 }}
           >
-            Become a Mentor <span><RiSparkling2Line className="w-5 h-5"/></span>
+            Become a Partner <span><RiSparkling2Line className="w-5 h-5"/></span>
           </motion.button>
+          </Link>
 </motion.div>
         
 

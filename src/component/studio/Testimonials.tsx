@@ -2,14 +2,11 @@
 "use client";
 import React, { useRef } from "react";
 import Image from "next/image";
-import { Bricolage_Grotesque, Plus_Jakarta_Sans } from "next/font/google";
+import {  Plus_Jakarta_Sans } from "next/font/google";
 import { VscQuote } from "react-icons/vsc";
 import { motion, Variants, useInView } from "framer-motion";
 
-const bricolage = Bricolage_Grotesque({
-  weight: ["700"],
-  subsets: ["latin"],
-});
+
 
 const plusJakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -57,7 +54,7 @@ const TestimonialsSection = () => {
         "Working on projects through ReCreaX has really helped me grow. I have become more confident in what I do. It has made me more open, curious and better prepared for real world work.",
       name: "Olaide",
       role: "Project Manager",
-      avatar: "/vanessa.jpg",
+      avatar: "/profile/profilestudio1.png",
       fallback: "V",
     },
     {
@@ -65,7 +62,7 @@ const TestimonialsSection = () => {
         "This project has significantly improved my design skills and opened new opportunities and connections in the tech industry helping me grow personally and professionally.",
       name: "Monsurah",
       role: "Product Designer",
-      avatar: "/guy2.jpg",
+      avatar: "/profile/profileatudio2.jpg",
       fallback: "H",
     },
     {
@@ -73,7 +70,7 @@ const TestimonialsSection = () => {
         "This project made me build my portfolio and gained valuable skills. It impacted my career and was able to build collaboration with other developers.",
       name: "Amarachi",
       role: "Backend Developer",
-      avatar: "/chineye.jpg",
+      avatar: "/profile/profilestudio3.jpg",
       fallback: "C",
     },
   ];
@@ -88,7 +85,7 @@ const TestimonialsSection = () => {
     >
       <div className="max-w-6xl mx-auto text-center">
         <motion.h2
-          className={`text-4xl sm:text-5xl font-bold text-[#1a2b47] mb-16 ${bricolage.className}`}
+          className={`text-4xl sm:text-5xl font-bold text-[#1a2b47] mb-16`}
           variants={fadeInUpVariants}
         >
           Talent Spotlights from <br /> Past Cohorts
@@ -112,7 +109,7 @@ const TestimonialsSection = () => {
 
               {/* Quote */}
               <motion.p
-                className="text-[#2A2829] text-xl text-center leading-relaxed mb-8 relative mt-4 z-10"
+                className="text-[#2A2829] text-lg text-center leading-relaxed mb-8 relative mt-4 z-10"
                 variants={fadeInUpVariants}
               >
                 {testimonial.quote}
@@ -120,7 +117,7 @@ const TestimonialsSection = () => {
 
               {/* Avatar and Name/Role */}
               <motion.div
-                className="flex items-center justify-center max-w-sm grid grid-cols-2"
+                className="flex item-center justify-center gap-2"
                 variants={containerVariants}
               >
                 <motion.div

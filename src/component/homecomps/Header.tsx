@@ -282,7 +282,7 @@ function Header() {
                   <AccordionContent>
                     <div className="p-4 bg-white rounded-lg flex flex-col gap-4">
                       <Link
-                        href="/recreax-internship"
+                        href="/program"
                         className="flex flex-row gap-3 items-center justify-start"
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
@@ -305,7 +305,7 @@ function Header() {
                         </div>
                       </Link>
                       <Link
-                        href="/studio"
+                        href="/recreaxStudio"
                         className="flex flex-row gap-3 items-center justify-start"
                         onClick={() => setIsMobileMenuOpen(false)}
                       >

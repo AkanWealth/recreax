@@ -71,7 +71,7 @@ const EarlyStageIdeasSection = () => {
           className="text-5xl sm:text-6xl font-bold text-white mb-4"
           variants={fadeInUpVariants}
         >
-          Work on <span className="text-green-400">Early-Stage Ideas</span>
+          Work on <span className="text-[#b6eb6a]">Early-Stage Ideas</span>
         </motion.h2>
         <motion.div
           className="flex items-center justify-center text-5xl gap-2 sm:text-6xl font-bold text-white mb-8"
