@@ -1,7 +1,7 @@
 
 "use client";
 import React, { useRef } from "react";
-import { Plus_Jakarta_Sans, Bricolage_Grotesque } from "next/font/google";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import { HiNewspaper } from "react-icons/hi2";
 import { HiDesktopComputer } from "react-icons/hi";
 import { VscBook } from "react-icons/vsc";
@@ -14,10 +14,7 @@ const plusJakarta = Plus_Jakarta_Sans({
   variable: "--font-plus-jakarta-sans",
 });
 
-const bricolage = Bricolage_Grotesque({
-  weight: ["700"],
-  subsets: ["latin"],
-});
+
 
 interface ProgramBenefit {
   icon: React.ReactNode;
@@ -141,7 +138,7 @@ const TalentProgram: React.FC = () => {
           variants={cardVariants}
           className="text-center mb-16"
         >
-          <h2 className={`text-3xl md:text-4xl font-bold text-gray-900 mb-4 ${bricolage.className}`}>
+          <h2 className={`text-3xl md:text-4xl font-bold text-gray-900 mb-4 `}>
             What You&apos;ll Gain at ReCreaX Talent <br /> Program
           </h2>
         </motion.div>
@@ -158,7 +155,7 @@ const TalentProgram: React.FC = () => {
                 <div className="mb-4 p-3 bg-blue-100 rounded-lg">
                   <div className="text-[#97A339]">{benefit.icon}</div>
                 </div>
-                <h3 className={`text-lg font-semibold text-gray-900 mb-3 ${bricolage.className}`}>
+                <h3 className={`text-lg font-semibold text-gray-900 mb-3`}>
                   {benefit.title}
                 </h3>
                 <p className={`text-gray-600 text-justify leading-relaxed text-sm ${plusJakarta.className}`}>
@@ -175,7 +172,7 @@ const TalentProgram: React.FC = () => {
               key={index}
               custom={index}
               variants={wordVariants}
-              className={`absolute ${word.position} ${word.rotation} ${word.color} ${word.background} ${word.border} font-semibold border-b-2 rounded-lg text-xl md:text-4xl p-4 transform hover:scale-110 transition-transform duration-300 cursor-default select-none ${bricolage.className}`}
+              className={`absolute ${word.position} ${word.rotation} ${word.color} ${word.background} ${word.border} font-semibold border-b-2 rounded-lg text-xl md:text-4xl p-4 transform hover:scale-110 transition-transform duration-300 cursor-default select-none `}
             >
               <span className="relative">{word.text}</span>
             </motion.div>

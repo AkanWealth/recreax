@@ -1,16 +1,11 @@
-
 "use client";
 import React, { useRef } from "react";
 import Image from "next/image";
-import { Bricolage_Grotesque, Plus_Jakarta_Sans } from "next/font/google";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import { Button } from "../ui/button";
 import { RiSparklingLine, RiSparkling2Line } from "react-icons/ri";
 import { motion, Variants, useInView, useAnimation, useScroll, useTransform } from "framer-motion";
-
-const bricolage = Bricolage_Grotesque({
-  weight: ["700"],
-  subsets: ["latin"],
-});
+import Link from "next/link";
 
 const plusJakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -95,7 +90,7 @@ function CtaSection() {
           {/* Left Content */}
           <motion.div className="flex-1 text-white" variants={containerVariants}>
             <motion.h2
-              className={`text-xl sm:text-lg lg:text-5xl font-bold mb-4 ${bricolage.className}`}
+              className={`text-xl sm:text-lg lg:text-5xl font-bold mb-4`}
               variants={fadeInUpVariants}
             >
               Join Talents That Builds Real Products
@@ -108,27 +103,29 @@ function CtaSection() {
             </motion.p>
             <motion.div className="flex flex-col sm:flex-row gap-4" variants={fadeInUpVariants}>
               <motion.div variants={buttonVariants} whileHover="hover" whileTap={{ scale: 0.95 }}>
-                <Button className="bg-[#00D4FF] text-[#12233D] px-8 py-4 rounded-lg font-semibold hover:bg-[#00C4EF] transition-colors flex items-center gap-2">
-                  <span>
-                    <RiSparklingLine className="w-5 h-5" />
-                  </span>
-                  Join the Next Cohort
-                </Button>
+                <Link href="https://talents.recreax.com/log-in" passHref>
+                  <Button className="bg-[#00D4FF] text-[#12233D] px-8 py-4 rounded-lg font-semibold hover:bg-[#00C4EF] transition-colors flex items-center gap-2">
+                    <span>
+                      <RiSparklingLine className="w-5 h-5" />
+                    </span>
+                    Join the Next Cohort
+                  </Button>
+                </Link>
               </motion.div>
             </motion.div>
           </motion.div>
 
           {/* Right Image */}
           <motion.div className="flex-1 relative" variants={imageVariants}>
-            <div className="relative w-full max-w-md mx-auto">
-              <div className="w-full max-w-md mx-auto p-8 relative">
-                <div className="w-full h-64 rounded-xl mb-4 flex items-center justify-center">
+            <div className="relative w-full mx-auto">
+              <div className="w-full mx-auto p-4 sm:p-8 relative">
+                <div className="w-full rounded-xl mb-4 flex items-center justify-center">
                   <Image
                     src="/svg/StudioCTA.svg"
                     alt="gallery"
-                    width={334}
-                    height={281}
-                    className="absolute rounded-xl object-cover w-auto h-auto"
+                    width={400} // Increased base width
+                    height={336} // Increased base height to maintain aspect ratio (400/334 * 281 ≈ 336)
+                    className="rounded-xl object-contain w-full h-auto max-h-[80vh] sm:max-h-[60vh] lg:max-h-[500px]"
                   />
                 </div>
               </div>
@@ -150,20 +147,19 @@ function CtaSection() {
         }
       >
         <motion.div
-          className="flex space-x-2 "
+          className="flex space-x-2"
           animate={controls}
           style={{ x }}
         >
           {duplicatedProjects.map((project, index) => (
             <motion.div
               key={`${project.id}-${index}`}
-              className="flex-shrink-0 w-70 h-20  flex items-center justify-center text-[#12233D] font-semibold"
+              className="flex-shrink-0 w-70 h-20 flex items-center justify-center text-[#12233D] font-semibold"
               variants={scrollItemVariants}
               custom={index}
             >
               <span>{project.title}</span>
               <RiSparkling2Line className="w-5 h-5 text-[#899434]" />
-
             </motion.div>
           ))}
         </motion.div>

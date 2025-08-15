@@ -1,4 +1,3 @@
-
 "use client";
 import React, { useRef } from "react";
 import Image from "next/image";
@@ -100,15 +99,15 @@ function ProgramSection() {
 
           {/* Right Image */}
           <motion.div className="flex-1 relative" variants={imageVariants}>
-            <div className="relative w-full max-w-md mx-auto">
-              <div className="w-full max-w-md mx-auto p-8 relative">
-                <div className="w-full h-64 rounded-xl mb-4 flex items-center justify-center">
+            <div className="relative w-full mx-auto">
+              <div className="w-full mx-auto p-4 sm:p-8 relative">
+                <div className="w-full rounded-xl mb-4 flex items-center justify-center">
                   <Image
                     src="/buildCOnfidence.svg"
                     alt="Woman with laptop"
-                    width={334}
-                    height={281}
-                    className="absolute rounded-xl object-cover w-auto h-auto"
+                    width={400} // Increased base width
+                    height={336} // Maintain aspect ratio (400/334 * 281 ≈ 336)
+                    className="rounded-xl object-contain w-full h-auto max-h-[80vh] sm:max-h-[60vh] lg:max-h-[500px]"
                   />
                 </div>
               </div>
