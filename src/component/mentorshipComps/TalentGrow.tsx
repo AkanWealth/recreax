@@ -5,6 +5,7 @@ import { Plus_Jakarta_Sans } from "next/font/google";
 import Image from "next/image";
 import { motion, Variants, useInView } from "framer-motion";
 import { RiSparkling2Line } from "react-icons/ri";
+import Link from "next/link";
 
 const plusJakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -103,6 +104,7 @@ const HelpTalentsGrow = () => {
           className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16"
           variants={containerVariants}
         >
+                    <Link href="https://talents.recreax.com/mentorship" passHref>
           <motion.button
             className="bg-[#00FFFF] text-black hover:bg-[#00c4ef] px-8 py-4 rounded-lg font-semibold text-lg flex items-center gap-2 transition-colors"
             variants={buttonVariants}
@@ -111,6 +113,8 @@ const HelpTalentsGrow = () => {
           >
             Become a Mentor <span><RiSparkling2Line className="w-5 h-5"/></span>
           </motion.button>
+          </Link>
+                    <Link href="https://talents.recreax.com/mentorslogin" passHref>
           <motion.button
             className="border border-white text-white hover:bg-white/10 px-8 py-4 rounded-lg font-semibold text-lg flex items-center gap-2 transition-colors"
             variants={buttonVariants}
@@ -119,6 +123,7 @@ const HelpTalentsGrow = () => {
           >
             Log in as a Mentor →
           </motion.button>
+          </Link>
         </motion.div>
 
         {/* Stats */}

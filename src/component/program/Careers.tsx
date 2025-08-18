@@ -5,7 +5,7 @@ import Image from "next/image";
 import { Plus_Jakarta_Sans, Bricolage_Grotesque } from "next/font/google";
 import { RiSparklingLine } from "react-icons/ri";
 import { motion, Variants, useScroll, useTransform } from "framer-motion";
-
+import Link from "next/link";
 const plusJakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
   weight: ["400"],
@@ -134,6 +134,7 @@ const CareerSection = () => {
           className={`flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-8 sm:mb-16 ${plusJakarta.className}`}
           variants={fadeInUpVariants}
         >
+                    <Link href="https://talents.recreax.com/authorization" passHref>
           <motion.button
             className="bg-[#00FFFF] text-[#12233D] hover:bg-[#00c4ef] px-8 sm:px-10 py-3 sm:py-4 rounded-lg font-semibold text-base sm:text-lg flex items-center gap-2 transition-colors"
             variants={buttonVariants}
@@ -142,9 +143,10 @@ const CareerSection = () => {
           >
             Secure Your Spot <RiSparklingLine className="w-5 h-5" />
           </motion.button>
-          <motion.span className="text-lg sm:text-base text-white" variants={fadeInUpVariants}>
+          </Link>
+          {/* <motion.span className="text-lg sm:text-base text-white" variants={fadeInUpVariants}>
             Next cohort starts: July
-          </motion.span>
+          </motion.span> */}
         </motion.div>
 
         {/* Single Hero Image with Enhanced Animation */}
