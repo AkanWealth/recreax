@@ -89,7 +89,7 @@ const HeroSection = () => {
           Meet REX, your AI career mentor that takes you beyond courses into real-world readiness. Practice with case studies, build stronger resumes, prep for interviews, and discover your career path.
         </motion.p>
         <motion.div variants={itemVariants} className={`flex flex-col sm:flex-row gap-4 justify-center items-center ${plusJakarta.className}`}>
-          <Link href="https://talents.recreax.com/log-in" passHref>
+          <Link href="https://talents.recreax.com/authorization" passHref>
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -98,7 +98,7 @@ const HeroSection = () => {
             Try REX Free <RiSparkling2Line className="text-xl" />
           </motion.button>
           </Link>
-          <Link href="https://talents.recreax.com/log-in" passHref>
+          <Link href="https://join.slack.com/t/recreaxcommunity/shared_invite/zt-2gcxglvz6-Iy4zA2OedVoSei5KT8XoKw" passHref>
           
           <motion.button
             whileHover={{ scale: 1.05 }}

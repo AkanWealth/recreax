@@ -6,6 +6,7 @@ import { Bricolage_Grotesque, Plus_Jakarta_Sans } from "next/font/google";
 import { Button } from "../ui/button";
 import { RiSparklingLine } from "react-icons/ri";
 import { motion, Variants, useInView } from "framer-motion";
+import Link from "next/link";
 
 const bricolage = Bricolage_Grotesque({
   weight: ["700"],
@@ -97,12 +98,14 @@ function CtaSection() {
                 whileHover="hover"
                 whileTap={{ scale: 0.95 }}
               >
+                          <Link href="https://talents.recreax.com/mentorship" passHref>
                 <Button
                   className="bg-[#00D4FF] text-[#12233D] px-8 py-4 rounded-lg font-semibold hover:bg-[#00C4EF] transition-colors flex items-center gap-2"
                 >
                   <RiSparklingLine className="w-5 h-5" />
                   Apply to Be a Mentor
                 </Button>
+                </Link>
               </motion.div>
             </motion.div>
           </motion.div>

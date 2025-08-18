@@ -114,7 +114,7 @@ function Footer() {
                 <h3 className="font-medium text-[#00D4FF] mb-4 sm:mb-6 text-base">Pages</h3>
                 <ul className="space-y-2 sm:space-y-3">
                   <li>
-                    <Link  href="https://talents.recreax.com/log-in" passHref className="text-white hover:text-white transition-colors text-sm">
+                    <Link  href="https://talents.recreax.com/authorization" passHref className="text-white hover:text-white transition-colors text-sm">
                       Rex AI
                     </Link>
                   </li>

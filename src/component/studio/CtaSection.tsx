@@ -103,7 +103,7 @@ function CtaSection() {
             </motion.p>
             <motion.div className="flex flex-col sm:flex-row gap-4" variants={fadeInUpVariants}>
               <motion.div variants={buttonVariants} whileHover="hover" whileTap={{ scale: 0.95 }}>
-                <Link href="https://talents.recreax.com/log-in" passHref>
+                  <Link href="https://talents.recreax.com/authorization" passHref>
                   <Button className="bg-[#00D4FF] text-[#12233D] px-8 py-4 rounded-lg font-semibold hover:bg-[#00C4EF] transition-colors flex items-center gap-2">
                     <span>
                       <RiSparklingLine className="w-5 h-5" />

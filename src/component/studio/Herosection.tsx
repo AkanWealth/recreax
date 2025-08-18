@@ -2,11 +2,10 @@
 "use client";
 import React, { useRef } from "react";
 import Image from "next/image";
-import {  Plus_Jakarta_Sans } from "next/font/google";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import { RiSparkling2Line } from "react-icons/ri";
 import { motion, Variants, useInView } from "framer-motion";
-
-;
+import Link from "next/link";
 
 const plusJakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -102,6 +101,7 @@ const EarlyStageIdeasSection = () => {
           className="flex items-center justify-center gap-4 mb-16"
           variants={fadeInUpVariants}
         >
+          <Link href="https://talents.recreax.com/authorization" passHref>
           <motion.button
             className="bg-cyan-400 text-black font-semibold px-8 py-4 rounded-lg hover:bg-cyan-300 transition-colors flex items-center gap-2"
             variants={buttonVariants}
@@ -110,26 +110,27 @@ const EarlyStageIdeasSection = () => {
           >
             Secure Your Spot <span className="text-lg"><RiSparkling2Line className="w-4 h-4" /></span>
           </motion.button>
-          <motion.span className="text-gray-300" variants={fadeInUpVariants}>
+        </Link>
+        {/* <motion.span className="text-gray-300" variants={fadeInUpVariants}>
             Next cohort starts: July
-          </motion.span>
-        </motion.div>
+          </motion.span> */}
+      </motion.div>
 
-        {/* Profile Images */}
-        <motion.div
-          className="flex justify-center items-center gap-8"
-          variants={imageVariants}
-        >
-          <Image
-            src="/svg/StudioHero.svg"
-            alt="Team member"
-            height={316.4490966796875}
-            width={316.4490966796875}
-            className="w-full h-full object-cover"
-          />
-        </motion.div>
-      </div>
-    </motion.section>
+      {/* Profile Images */}
+      <motion.div
+        className="flex justify-center items-center gap-8"
+        variants={imageVariants}
+      >
+        <Image
+          src="/svg/StudioHero.svg"
+          alt="Team member"
+          height={316.4490966796875}
+          width={316.4490966796875}
+          className="w-full h-full object-cover"
+        />
+      </motion.div>
+    </div>
+    </motion.section >
   );
 };
 

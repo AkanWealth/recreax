@@ -243,12 +243,12 @@ function Header() {
               </div>
             </DropdownMenuContent>
           </DropdownMenu> 
-          <Link
+          {/* <Link
             className="px-1 sm:px-2 text-xs sm:text-sm font-plus-jakarta-sans text-white"
             href="/blog"
           >
             Blog
-          </Link>
+          </Link> */}
         </div>
 
         {/* Mobile Menu Button */}
@@ -400,13 +400,13 @@ function Header() {
                 </AccordionItem>
               </Accordion>
 
-              <Link
+              {/* <Link
                 className="font-medium font-plus-jakarta-sans text-sm text-white"
                 href="/blog"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Blog
-              </Link>
+              </Link> */}
 
                <Link href="https://talents.recreax.com/log-in" passHref>
                 <Button
