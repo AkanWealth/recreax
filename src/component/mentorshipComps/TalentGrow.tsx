@@ -106,7 +106,7 @@ const HelpTalentsGrow = () => {
         >
                     <Link href="https://talents.recreax.com/mentorship" passHref>
           <motion.button
-            className="bg-[#00FFFF] text-black hover:bg-[#00c4ef] px-8 py-4 rounded-lg font-semibold text-lg flex items-center gap-2 transition-colors"
+            className="bg-[#00FFFF] cursor-pointer text-black hover:bg-[#00c4ef] px-8 py-4 rounded-lg font-semibold text-lg flex items-center gap-2 transition-colors"
             variants={buttonVariants}
             whileHover="hover"
             whileTap={{ scale: 0.95 }}
@@ -116,7 +116,7 @@ const HelpTalentsGrow = () => {
           </Link>
                     <Link href="https://talents.recreax.com/mentorslogin" passHref>
           <motion.button
-            className="border border-white text-white hover:bg-white/10 px-8 py-4 rounded-lg font-semibold text-lg flex items-center gap-2 transition-colors"
+            className="border border-white text-white hover:bg-white/10 px-8 py-4 rounded-lg font-semibold text-lg flex items-center gap-2 transition-colors cursor-pointer"
             variants={buttonVariants}
             whileHover="hover"
             whileTap={{ scale: 0.95 }}

@@ -93,7 +93,7 @@ const HeroSection = () => {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="bg-[#00d4ff] text-black hover:bg-[#00c4ef] px-8 py-4 rounded-lg font-semibold text-lg flex items-center gap-2 transition-colors"
+            className="bg-[#00d4ff] cursor-pointer text-black hover:bg-[#00c4ef] px-8 py-4 rounded-lg font-semibold text-lg flex items-center gap-2 transition-colors"
           >
             Try REX Free <RiSparkling2Line className="text-xl" />
           </motion.button>
@@ -103,7 +103,7 @@ const HeroSection = () => {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="border border-white text-white hover:bg-gray-600 px-8 py-4 rounded-lg font-semibold text-lg flex items-center gap-2 transition-colors"
+            className="border cursor-pointer border-white text-white hover:bg-gray-600 px-8 py-4 rounded-lg font-semibold text-lg flex items-center gap-2 transition-colors"
           >
             Join Talent Community <FaLongArrowAltRight className="text-xl" />
           </motion.button>

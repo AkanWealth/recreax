@@ -15,8 +15,8 @@ const HeroSection = () => {
         {/* Main Heading */}
         <div className="mb-8">
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-            We Know What It’s Like to be
-            <span className="bg-[#B6EB6A] text-[#1a2b47] px-4 py-2 rounded-2xl inline-block">
+            We Know What It&apos;s Like to be
+            <span className="bg-white border border-[[#1a2b47]] text-[#1a2b47] px-4 py-2 rounded-2xl inline-block">
               Skilled But Overlooked
             </span>
           </h2>
@@ -26,7 +26,7 @@ const HeroSection = () => {
 
         {/* Description */}
         <p className="text-lg text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed">
-         ReCreaX Talent is for those who’ve done the learning and are ready to execute. We turn skills into experience through REX AI mentor preparation and hands-on programs that get you hired.
+         ReCreaX Talent is for those who&apos;ve done the learning and are ready to execute. We turn skills into experience through REX AI mentor preparation and hands-on programs that get you hired.
 
         </p>
 

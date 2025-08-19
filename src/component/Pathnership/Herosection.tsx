@@ -58,7 +58,7 @@ const HeroSection = () => {
                 >
                   <Link href="/partnership">
         <motion.button
-            className="bg-[#00FFFF] text-black hover:bg-[#00c4ef] px-8 py-4 rounded-lg font-semibold text-lg flex items-center gap-2 transition-colors"
+            className="bg-[#00FFFF] cursor-pointer text-black hover:bg-[#00c4ef] px-8 py-4 rounded-lg font-semibold text-lg flex items-center gap-2 transition-colors"
             variants={buttonVariants}
             whileHover="hover"
             whileTap={{ scale: 0.95 }}

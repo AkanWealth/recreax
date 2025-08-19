@@ -1,11 +1,24 @@
-'use client';
+
 
 import { Plus_Jakarta_Sans } from "next/font/google";
 import localFont from "next/font/local";
-import Header from "@/component/homecomps/Header";
-import Footer from "@/component/homecomps/Footer";
-import { usePathname } from 'next/navigation';
+import ConditionalLayout from "./conditional";
+import Head from 'next/head';
 import "./globals.css";
+import type { Metadata } from 'next';
+
+
+
+
+export const metadata: Metadata = {
+  title: 'ReCreax',
+  description: 'ReCreax Talent Website',
+  icons: {
+    icon: '/image.png',     // Standard favicon
+    shortcut: '/image.png', // Shortcut for older browsers
+    apple: '/image.png', // Apple Touch Icon
+  },
+}
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   variable: "--font-plus-jakarta-sans",
@@ -108,23 +121,7 @@ const tomato = localFont({
   variable: "--font-tomato",
 });
 
-// Create a client component for conditional rendering
-function ConditionalLayout({ children }: { children: React.ReactNode }) {
-  const pathname = usePathname();
-  const isPartnershipPage = pathname === '/partnership';
 
-  if (isPartnershipPage) {
-    return <>{children}</>;
-  }
-
-  return (
-    <>
-      <Header />
-      {children}
-      <Footer />
-    </>
-  );
-}
 
 export default function RootLayout({
   children,
@@ -133,6 +130,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <Head>
+        <link rel="icon" href="/image.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/image.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/image.png" />
+        <link rel="apple-touch-icon" href="/image.png" />
+        <meta name="theme-color" content="#000000" />
+      </Head>
       <meta
         name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"

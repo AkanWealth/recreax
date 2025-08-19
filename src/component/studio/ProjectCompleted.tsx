@@ -71,7 +71,7 @@ const ProjectGallerySection = () => {
             className="text-4xl sm:text-5xl font-bold text-[#1a2b47]"
             variants={fadeInUpVariants}
           >
-            by Our Talents
+            with Our Talents
           </motion.h3>
           <motion.div className="flex -space-x-2" variants={containerVariants}>
             {talentImages.map((imageSrc, index) => (

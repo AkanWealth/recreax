@@ -1,4 +1,3 @@
-
 "use client";
 import React, { useRef } from "react";
 import { Plus_Jakarta_Sans } from "next/font/google";
@@ -7,14 +6,13 @@ import { HiDesktopComputer } from "react-icons/hi";
 import { VscBook } from "react-icons/vsc";
 import {  RiFolderImageLine, RiBookletFill, RiGroup2Line } from "react-icons/ri";
 import { motion, useInView, Variants } from "framer-motion";
+import Image from "next/image";
 
 const plusJakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
   weight: ["400"],
   variable: "--font-plus-jakarta-sans",
 });
-
-
 
 interface ProgramBenefit {
   icon: React.ReactNode;
@@ -122,6 +120,15 @@ const TalentProgram: React.FC = () => {
     }),
   };
 
+  const imageVariants: Variants = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
+  };
+
   return (
     <motion.section
       ref={sectionRef}
@@ -166,7 +173,22 @@ const TalentProgram: React.FC = () => {
           ))}
         </div>
 
-        <div className="relative h-32 mt-16">
+        {/* Mobile Image View - Hidden on lg and above */}
+        <motion.div 
+          className="flex justify-center items-center mt-16 lg:hidden"
+          variants={imageVariants}
+        >
+          <Image
+            src="/svg/TalentProgram(1).svg" 
+            alt="Talent Program Benefits"
+            width={400}
+            height={300}
+            className="w-full  h-auto "
+          />
+        </motion.div>
+
+        {/* Desktop Decorative Words - Hidden on mobile, visible on lg and above */}
+        <div className="relative h-32 mt-16 hidden lg:block">
           {decorativeWords.map((word, index) => (
             <motion.div
               key={index}

@@ -79,7 +79,7 @@ const EarlyStageIdeasSection = () => {
           <p>in a Product Studio</p>
           <div className="text-4xl bg-[#6ECDDD] rounded-xl p-4">
             <Image
-              src="/svg/vector(7).svg"
+              src="/Vector(8).svg"
               alt="bulb"
               className="w-12 h-12 rounded"
               height={20}
@@ -90,7 +90,7 @@ const EarlyStageIdeasSection = () => {
 
         {/* Description */}
         <motion.p
-          className={`text-lg text-gray-300 max-w-4xl mx-auto mb-12 leading-relaxed ${plusJakarta.className}`}
+          className={`text-lg text-white max-w-4xl mx-auto mb-12 leading-relaxed ${plusJakarta.className}`}
           variants={fadeInUpVariants}
         >
           Join a 3-month cohort where you collaborate with other talents and early-stage founders to turn startup ideas into working MVPs. You&apos;ll co-build real product features, earn references, and gain experience that shapes your portfolio.
@@ -103,7 +103,7 @@ const EarlyStageIdeasSection = () => {
         >
           <Link href="https://talents.recreax.com/authorization" passHref>
           <motion.button
-            className="bg-cyan-400 text-black font-semibold px-8 py-4 rounded-lg hover:bg-cyan-300 transition-colors flex items-center gap-2"
+            className="bg-cyan-400 cursor-pointer text-black font-semibold px-8 py-4 rounded-lg hover:bg-cyan-300 transition-colors flex items-center gap-2"
             variants={buttonVariants}
             whileHover="hover"
             whileTap={{ scale: 0.95 }}

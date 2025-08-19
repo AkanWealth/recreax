@@ -50,7 +50,7 @@ const CtaSection = () => {
     >
       <section className="bg-[#12233D] px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16 relative overflow-hidden rounded-2xl sm:rounded-3xl mx-2 sm:mx-4 lg:mx-8 mb-4 sm:mb-8">
         {/* Background decoration - hidden on mobile for cleaner look */}
-        
+
 
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col lg:flex-row items-center gap-6 sm:gap-8 lg:gap-12">
@@ -62,44 +62,55 @@ const CtaSection = () => {
               >
                 You&apos;ve Learned Enough.
               </motion.h2>
-              
+
               <motion.div variants={itemVariants} className="flex items-center justify-center lg:justify-start gap-2 sm:gap-4 mb-6 sm:mb-8">
+                <Image
+                                src={"/Arrow.png"}
+                                alt="Arrow"
+                                width={40}
+                                height={40}
+                                className="w-auto h-auto"/>
                 <h3 className={`text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold `}>
                   It&apos;s Time to Work
                 </h3>
               </motion.div>
-              
+
               <motion.p
                 variants={itemVariants}
                 className={`text-base sm:text-lg text-white/90 mb-6 sm:mb-8 max-w-md mx-auto lg:mx-0 lg:max-w-lg leading-relaxed ${plusJakarta.className}`}
               >
                 Join thousands of talents building skills, confidence, and real-world experience with guidance every step of the way.
               </motion.p>
-              
+
               <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
+                {/* Primary button */}
                 <Button
                   asChild
                   className="bg-[#00D4FF] text-[#12233D] px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold hover:bg-[#00C4EF] transition-all duration-200 flex items-center justify-center gap-2 text-sm sm:text-base"
+                // whileHover={{ scale: 1.02 }}
+                // whileTap={{ scale: 0.98 }}
                 >
-                <Link href="https://talents.recreax.com/authorization" passHref>
-
-                  <motion.button whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+                  <Link href="https://talents.recreax.com/authorization" passHref>
                     <RiSparklingLine className="w-4 h-4 sm:w-5 sm:h-5" />
-                    Try REX Free
-                  </motion.button>
-                </Link>
+                    <span>Try REX Free</span>
+                  </Link>
                 </Button>
+
+                {/* Outline button */}
                 <Button
                   asChild
                   variant="outline"
                   className="border-white text-white bg-transparent px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold hover:bg-white hover:text-[#12233D] transition-all duration-200 flex items-center justify-center gap-2 text-sm sm:text-base"
+                // whileHover={{ scale: 1.02 }}
+                // whileTap={{ scale: 0.98 }}
                 >
-                  <motion.button whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-                    Explore Programs
+                  <Link href="/program" passHref>
+                    <span>Explore Programs</span>
                     <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
-                  </motion.button>
+                  </Link>
                 </Button>
               </motion.div>
+
             </motion.div>
 
             {/* Image Section - Single responsive image */}
@@ -116,7 +127,7 @@ const CtaSection = () => {
                       alt="Woman with laptop"
                       fill
                       className="w-auto h-auto object-cover object-center"
-                      // sizes="(max-width: 640px) 90vw, (max-width: 1024px) 50vw, 40vw"
+                    // sizes="(max-width: 640px) 90vw, (max-width: 1024px) 50vw, 40vw"
                     />
                   </div>
                 </div>
