@@ -47,31 +47,31 @@ function Footer() {
                 {/* Social Media */}
               <div className="flex space-x-3">
                 <a 
-                  href="https://www.facebook.com/share/1LWZBE8jrV/"
+                  href="https://m.facebook.com/100094738337826/"
                   className="w-8 h-8 border border-gray-700 rounded-full flex items-center justify-center hover:bg-[#00D4FF] transition-colors"
                 >
                   <FaFacebook className="w-4 h-4" />
                 </a>
                 <a 
-                  href="https://x.com/recreaxbusiness"
+                  href="https://x.com/recreax_?s=21"
                   className="w-8 h-8 border border-gray-700 rounded-full flex items-center justify-center hover:bg-[#00D4FF] transition-colors"
                 >
                   <FaXTwitter className="w-4 h-4" />
                 </a>
                 <a 
-                  href="https://www.instagram.com/recreaxbusiness"
+                  href="https://www.instagram.com/recreax_?igsh=MTRsaTdqeG8zaXQ2YQ=="
                   className="w-8 h-8 border border-gray-700 rounded-full flex items-center justify-center hover:bg-[#00D4FF] transition-colors"
                 >
                   <FaInstagram className="w-4 h-4" />
                 </a>
                 <a 
-                  href="https://www.linkedin.com/showcase/recreax-for-business/"
+                  href="https://www.linkedin.com/company/recreaxtalent/"
                   className="w-8 h-8 border border-gray-700 rounded-full flex items-center justify-center hover:bg-[#00D4FF] transition-colors"
                 >
                   <FaLinkedinIn className="w-4 h-4" />
                 </a>
                 <a 
-                  href="https://www.tiktok.com/@recreax"
+                  href="https://www.tiktok.com/@recreax?_t=ZS-8yzLmjOU5Mm&_r=1"
                   className="w-8 h-8 border border-gray-700 rounded-full flex items-center justify-center hover:bg-[#00D4FF] transition-colors"
                 >
                   <FaTiktok className="w-4 h-4" />

@@ -86,11 +86,11 @@ function CtaSection() {
               <div className="w-full mx-auto p-4 sm:p-8 relative">
                 <div className="w-full rounded-xl mb-4 flex items-center justify-center">
                   <Image
-                    src="/Group1.png"
+                    src="/Group.svg"
                     alt="Woman with laptop"
                     width={400} // Increased base width
                     height={336} // Maintain aspect ratio (400/334 * 281 ≈ 336)
-                    className="rounded-xl object-contain w-full h-auto max-h-[80vh] sm:max-h-[60vh] lg:max-h-[500px]"
+                    className="rounded-xl object-contain w-auto h-auto max-h-[80vh] sm:max-h-[60vh] lg:max-h-[500px]"
                   />
                 </div>
               </div>

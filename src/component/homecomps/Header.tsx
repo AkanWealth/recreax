@@ -417,7 +417,7 @@ function Header() {
               </Link>
               <Link href="https://talents.recreax.com/authorization" passHref>
                 <Button
-                  className="bg-[#00FFFF] text-sm font-medium rounded-lg py-[12px] px-4 hover:bg-[#00FFFF]/80 text-[#12233D] w-full cursor-pointer"
+                  className="bg-[#00FFFF]  text-sm font-medium rounded-lg py-[12px] px-4 hover:bg-[#00FFFF]/80 text-[#12233D] w-full cursor-pointer"
                 >
                   Join ReCreaX
                 </Button>
