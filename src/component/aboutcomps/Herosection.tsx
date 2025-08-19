@@ -16,7 +16,7 @@ const HeroSection = () => {
         <div className="mb-8">
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
             We Know What It&apos;s Like to be
-            <span className="bg-white border border-[[#1a2b47]] text-[#1a2b47] px-4 py-2 rounded-2xl inline-block">
+            <span className="bg-white italic border border-[#6ECDDD] text-[#003267] px-4 py-2 rounded-2xl inline-block">
               Skilled But Overlooked
             </span>
           </h2>

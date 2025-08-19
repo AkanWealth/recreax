@@ -91,10 +91,10 @@ const PartnershipForm = () => {
         <>
             <div className="min-h-screen bg-white">
                 {/* Back Button */}
-                <div className="absolute top-6 left-6 z-10">
+                <div className="absolute mb-16 top-6 left-6 z-10">
                     <button
                         onClick={goBack}
-                        className="bg-gray-100 hover:bg-gray-200 text-gray-700 px-4 py-2 rounded-full flex items-center gap-2 transition-all duration-300 shadow-sm"
+                        className="bg-gray-100 mb-16 hover:bg-gray-200 text-gray-700 px-4 py-2 rounded-full flex items-center gap-2 transition-all duration-300 shadow-sm"
                     >
                         <ArrowLeft size={20} />
                         Back
@@ -109,7 +109,7 @@ const PartnershipForm = () => {
                             transition={{ duration: 0.6 }}
                             className="text-center mb-12"
                         >
-                            <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight text-[#12233D]">
+                            <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mt-8 mb-6 leading-tight text-[#12233D]">
                                 Let&apos;s Build the Future of<br />
                                 Tech Talent Together
                             </h1>

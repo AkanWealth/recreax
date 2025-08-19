@@ -7,7 +7,7 @@ const WaysToSupportAsMentor: React.FC = () => {
       {/* Header */}
       <div className="text-center mb-12">
         <h1 className="text-4xl font-bold text-white mb-2">
-          Ways to Support as a <span className="text-green-400">Mentor</span>
+          Ways to Support as a <span className="text-[#B6EB6A]">Mentor</span>
         </h1>
       </div>
 

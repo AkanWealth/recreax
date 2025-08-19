@@ -12,7 +12,7 @@ const plusJakarta = Plus_Jakarta_Sans({
 
 const OurMission: React.FC = () => {
   return (
-    <div className="min-h-screen bg-[#D2F0F4] flex items-center p-4">
+    <div className="bg-[#D2F0F4] flex items-center py-10 px-6">
       <div className="max-w-4xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-4 items-center">
         
         {/* Left Column - Isometric Cubes */}
@@ -20,7 +20,7 @@ const OurMission: React.FC = () => {
           <div className="bg-[#B6EB6A] rounded-3xl p-16 flex items-center justify-center">
             <div className="relative">
               <Image
-              src={"/about/FRame.svg"}
+              src={"/about/Frame.svg"}
               alt=''
               width={140}
               height={188}

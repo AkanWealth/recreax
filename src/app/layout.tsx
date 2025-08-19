@@ -14,9 +14,9 @@ export const metadata: Metadata = {
   title: 'ReCreax',
   description: 'ReCreax Talent Website',
   icons: {
-    icon: '/image.png',     // Standard favicon
-    shortcut: '/image.png', // Shortcut for older browsers
-    apple: '/image.png', // Apple Touch Icon
+    icon: '/image.png',    
+    shortcut: '/image.png', 
+    apple: '/image.png',
   },
 }
 

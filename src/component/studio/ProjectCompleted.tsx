@@ -1,4 +1,3 @@
-
 "use client";
 import React, { useRef } from "react";
 import Image from "next/image";
@@ -64,32 +63,37 @@ const ProjectGallerySection = () => {
           Project Completed
         </motion.h2>
         <motion.div
-          className="flex items-center justify-center gap-4 mb-8"
+          className="flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2 mb-8"
           variants={fadeInUpVariants}
         >
-          <motion.h3
-            className="text-4xl sm:text-5xl font-bold text-[#1a2b47]"
+          <motion.div
+            className="flex flex-col sm:flex-row items-center gap-1 sm:gap-2"
             variants={fadeInUpVariants}
           >
-            with Our Talents
-          </motion.h3>
-          <motion.div className="flex -space-x-2" variants={containerVariants}>
-            {talentImages.map((imageSrc, index) => (
-              <motion.div
-                key={index}
-                className="w-10 h-10 rounded-full border-2 border-white overflow-hidden"
-                variants={avatarVariants}
-                custom={index}
-              >
-                <Image
-                  src={imageSrc}
-                  alt={`Talent ${index + 1}`}
-                  height={40}
-                  width={40}
-                  className="w-full h-full object-cover"
-                />
-              </motion.div>
-            ))}
+            <motion.h3
+              className="text-2xl sm:text-4xl font-bold text-[#003267] text-center sm:text-left"
+              variants={fadeInUpVariants}
+            >
+              with Our Talents
+            </motion.h3>
+            <motion.div className="flex -space-x-2 mt-2 sm:mt-0" variants={containerVariants}>
+              {talentImages.map((imageSrc, index) => (
+                <motion.div
+                  key={index}
+                  className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 border-white overflow-hidden"
+                  variants={avatarVariants}
+                  custom={index}
+                >
+                  <Image
+                    src={imageSrc}
+                    alt={`Talent ${index + 1}`}
+                    height={40}
+                    width={40}
+                    className="w-full h-full object-cover"
+                  />
+                </motion.div>
+              ))}
+            </motion.div>
           </motion.div>
         </motion.div>
       </div>
