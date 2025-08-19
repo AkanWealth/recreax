@@ -1,4 +1,3 @@
-
 "use client";
 import React, { useState, useRef } from "react";
 import { ArrowDown } from "lucide-react";
@@ -16,10 +15,6 @@ const bricolage = Bricolage_Grotesque({
   subsets: ["latin"],
 });
 
-const fadeInUpVariants: Variants = {
-  hidden: { opacity: 0, y: 50 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
-};
 interface FAQItem {
   question: string;
   answer: string;
@@ -28,7 +23,7 @@ interface FAQItem {
 const faqData: FAQItem[] = [
   {
     question: "Do I need prior work experience?",
-    answer: "No. If you have basic skills in a tech role and are ready to commit, you’re eligible.",
+    answer: "No. If you have basic skills in a tech role and are ready to commit, you're eligible.",
   },
   {
     question: "Is this remote?",
@@ -56,20 +51,26 @@ const FAQItem: React.FC<{ item: FAQItem; index: number }> = ({ item, index }) =>
   };
 
   const itemVariants: Variants = {
-    hidden: { opacity: 0, x: index % 2 === 0 ? -100 : 100 },
-    visible: { opacity: 1, x: 0, transition: { duration: 0.6, ease: "easeOut" } },
+    hidden: { opacity: 0, y: 30 },
+    visible: { 
+      opacity: 1, 
+      y: 0, 
+      transition: { 
+        duration: 0.5, 
+        ease: "easeOut",
+        delay: index * 0.1 
+      } 
+    },
   };
 
   return (
     <motion.div
-      custom={index}
       variants={itemVariants}
       className={`border-b border-gray-200 last:border-b-0 py-6 ${bricolage.className}`}
     >
-      <motion.div
+      <div
         className="mb-4 flex items-center justify-between cursor-pointer"
         onClick={toggleOpen}
-        variants={fadeInUpVariants}
       >
         <h3 className="text-lg font-medium text-gray-900 mb-0">{item.question}</h3>
         <motion.div
@@ -78,7 +79,7 @@ const FAQItem: React.FC<{ item: FAQItem; index: number }> = ({ item, index }) =>
         >
           <ArrowDown className="w-5 h-5 text-[#97A339]" />
         </motion.div>
-      </motion.div>
+      </div>
       <div
         className={`overflow-hidden transition-all duration-300 ease-in-out ${
           isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
@@ -98,11 +99,17 @@ const FAQ: React.FC = () => {
 
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { staggerChildren: 0.2 } },
+    visible: { 
+      opacity: 1, 
+      transition: { 
+        staggerChildren: 0.1,
+        delayChildren: 0.2 
+      } 
+    },
   };
 
   const fadeInUpVariants: Variants = {
-    hidden: { opacity: 0, y: 50 },
+    hidden: { opacity: 0, y: 30 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
   };
 
@@ -116,7 +123,7 @@ const FAQ: React.FC = () => {
     >
       <div className="w-full mx-auto px-10 max-w-8xl">
         {/* Header */}
-        <motion.div className="text-center mb-12" variants={containerVariants}>
+        <motion.div className="text-center mb-12">
           <motion.h2
             className="text-3xl md:text-4xl font-bold text-gray-900 mb-4"
             variants={fadeInUpVariants}
@@ -132,11 +139,14 @@ const FAQ: React.FC = () => {
         </motion.div>
 
         {/* FAQ Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-12 gap-y-0">
+        <motion.div 
+          className="grid grid-cols-1 lg:grid-cols-2 gap-x-12 gap-y-0"
+          variants={containerVariants}
+        >
           {faqData.map((item, index) => (
             <FAQItem key={index} item={item} index={index} />
           ))}
-        </div>
+        </motion.div>
       </div>
     </motion.section>
   );

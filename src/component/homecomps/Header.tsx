@@ -25,10 +25,6 @@ import {
 } from "../ui/accordion";
 
 import { ChevronDown, Menu, X } from "lucide-react";
-// import NewsModal from "@/components/homecomps/blogpage/NewsModal";
-
-
-
 
 const plusJakarta = Plus_Jakarta_Sans({
     subsets: ["latin"],
@@ -36,10 +32,11 @@ const plusJakarta = Plus_Jakarta_Sans({
     variable: "--font-plus-jakarta-sans",
 });
 
-
 function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [, setIsModalOpen] = useState(false);
+  const [programsDropdownOpen, setProgramsDropdownOpen] = useState(false);
+  const [whyRecreaxDropdownOpen, setWhyRecreaxDropdownOpen] = useState(false);
 
   const pathname = usePathname();
 
@@ -47,6 +44,12 @@ function Header() {
   useEffect(() => {
     setIsMobileMenuOpen(false);
   }, [pathname]);
+
+  // Function to handle dropdown item clicks
+  const handleDropdownItemClick = () => {
+    setProgramsDropdownOpen(false);
+    setWhyRecreaxDropdownOpen(false);
+  };
 
   return (
     <nav className={`sticky top-0 left-0 right-0 z-50 w-full py-0 px-0 sm:py-4 sm:p-8   bg-[#12233D] shadow-md ${plusJakarta.className}`}>
@@ -69,7 +72,7 @@ function Header() {
           >
             Home
           </Link>
-          <DropdownMenu>
+          <DropdownMenu open={programsDropdownOpen} onOpenChange={setProgramsDropdownOpen}>
             <DropdownMenuTrigger className="focus-visible:outline-none">
               <div className="flex items-center h-fit">
                 <p className="font-medium font-plus-jakarta-sans text-xs sm:text-sm text-white">
@@ -82,7 +85,7 @@ function Header() {
               <div className="grid grid-cols-2 gap-2 p-2">
                 {/* ReCreaX Internship */}
                 <div className="flex flex-col cursor-pointer group">
-                  <Link href="/program" className="flex flex-cols-2 gap-2">
+                  <Link href="/program" className="flex flex-cols-2 gap-2" onClick={handleDropdownItemClick}>
                     <div className="flex items-center justify-center w-full h-full bg-[#E3E4FE] rounded-xl  transition-colors">
                       <Image
                         src="/progress.png"
@@ -109,7 +112,7 @@ function Header() {
 
                 {/* ReCreaX Studio */}
                 <div className="flex flex-col rounded-xl transition-all duration-200 cursor-pointer group">
-                  <Link href="/recreaxStudio" className="flex flex-cols-2 gap-2">
+                  <Link href="/recreaxStudio" className="flex flex-cols-2 gap-2" onClick={handleDropdownItemClick}>
                     <div className="flex items-center justify-center w-full h-full bg-[#E4FFE0] rounded-xl transition-colors">
                       <Image
                         src="/Group(2).png"
@@ -146,7 +149,7 @@ function Header() {
           </Link>
           
           
-          <DropdownMenu>
+          <DropdownMenu open={whyRecreaxDropdownOpen} onOpenChange={setWhyRecreaxDropdownOpen}>
             <DropdownMenuTrigger className="focus-visible:outline-none">
               <div className="flex items-center h-fit gap-1 md:gap-2">
                 <p className="font-medium font-plus-jakarta-sans text-xs sm:text-sm text-white">
@@ -159,7 +162,7 @@ function Header() {
               <div className="grid grid-cols-2 gap-4 p-2">
                 {/* AboutUs */}
                 <div className="flex flex-col cursor-pointer group">
-                  <Link href="/aboutUs" className="flex flex-cols-2 gap-2">
+                  <Link href="/aboutUs" className="flex flex-cols-2 gap-2" onClick={handleDropdownItemClick}>
                     <div className="flex items-center justify-center w-full h-full bg-[#E3E4FE] rounded-xl  transition-colors">
                       <Image
                         src="/Frame (1).png"
@@ -186,7 +189,7 @@ function Header() {
 
                 {/* Contact Us */}
                 <div className="flex flex-col rounded-xl transition-all duration-200 cursor-pointer group">
-                  <Link href="/contactus" className="flex flex-cols-2 gap-2">
+                  <Link href="/contactus" className="flex flex-cols-2 gap-2" onClick={handleDropdownItemClick}>
                     <div className="flex items-center justify-center w-full h-full bg-[#FFE0F7] rounded-xl transition-colors">
                       <Image
                         src="/Group (3).png"
@@ -212,9 +215,9 @@ function Header() {
                     </div>
                   </Link>
                 </div>
-                 {/* ReCreaX Studio */}
+                 {/* Partnership */}
                 <div className="flex flex-col rounded-xl transition-all duration-200 cursor-pointer group">
-                  <Link href="/pathnership" className="flex flex-cols-2 gap-2">
+                  <Link href="/pathnership" className="flex flex-cols-2 gap-2" onClick={handleDropdownItemClick}>
                     <div className="flex items-center justify-center w-full h-full bg-[#E4FFE0] rounded-xl transition-colors">
                       <Image
                         src="/Group (4).png"
@@ -363,7 +366,10 @@ function Header() {
                       </Link>
                       <Link
                         href="/contactus"
-                        onClick={() => setIsModalOpen(true)}
+                        onClick={() => {
+                          setIsModalOpen(true);
+                          setIsMobileMenuOpen(false);
+                        }}
                         className="flex flex-row gap-3 items-center justify-start cursor-pointer"
                       >
                         <div className="bg-orange-100 text-orange-600 w-8 h-8 p-1 flex items-center justify-center rounded-xl">

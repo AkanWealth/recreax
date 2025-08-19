@@ -39,13 +39,13 @@ const StudioCohortSection = () => {
         {/* Header */}
         <motion.div className="text-center mb-16" variants={containerVariants}>
           <motion.h2
-            className="text-4xl sm:text-5xl font-bold text-[#1a2b47] mb-4"
+            className="text-4xl sm:text-6xl font-bold text-[#1a2b47] mb-4"
             variants={fadeInUpVariants}
           >
             Inside the <span className="text-[#1a2b47]">ReCreax</span>
           </motion.h2>
           <motion.div
-            className="flex items-center justify-center text-5xl gap-2 sm:text-6xl font-bold text-[#1a2b47] mb-8"
+            className="flex items-center justify-center text-3xl gap-2 sm:text-6xl font-bold text-[#1a2b47] mb-8"
             variants={fadeInUpVariants}
           >
             <p> Studio Cohort</p>
