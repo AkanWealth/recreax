@@ -1,5 +1,4 @@
 
-
 import { Plus_Jakarta_Sans } from "next/font/google";
 import localFont from "next/font/local";
 import ConditionalLayout from "./conditional";
@@ -132,10 +131,8 @@ export default function RootLayout({
     <html lang="en">
       <Head>
         <link rel="icon" href="/image.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/image.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/image.png" />
-        <link rel="apple-touch-icon" href="/image.png" />
-        <meta name="theme-color" content="#000000" />
+        <title>ReCreax</title>
+        <meta name="description" content="ReCreax Talent Website" />
       </Head>
       <meta
         name="viewport"

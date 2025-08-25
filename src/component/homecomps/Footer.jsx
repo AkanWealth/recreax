@@ -5,7 +5,7 @@ import React, { useState } from "react";
 import { Button } from "../ui/button";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
-import { Bricolage_Grotesque, Plus_Jakarta_Sans} from "next/font/google";
+import { Bricolage_Grotesque, Plus_Jakarta_Sans } from "next/font/google";
 import { FaFacebook, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import { FaXTwitter, FaTiktok } from "react-icons/fa6";
 
@@ -28,68 +28,72 @@ function Footer() {
     setFooterEmail("");
   };
 
+  const handleScrollToFAQ = (e) => {
+    e.preventDefault();
+    const element = document.getElementById("faq-section");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <div className="bg-[#DBF1F9]">
-      
       {/* Footer Content */}
-    <footer className={`bg-[#12233D] rounded-t-4xl text-white py-8 sm:py-16 px-4 sm:px-12 lg:px-18 ${plusJakarta.className}`}>
+      <footer className={`bg-[#12233D] rounded-t-4xl text-white py-8 sm:py-16 px-4 sm:px-12 lg:px-18 ${plusJakarta.className}`}>
         <div className="max-w-7xl mx-auto">
           {/* Header Section - Logo and Social Media */}
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-8 gap-4">
-             <Image
-                src="/recreaxlogo.png"
-                height={32}
-                width={120}
-                unoptimized={true}
-                alt="ReCreaX Logo"
-                className=""
-              />
-                {/* Social Media */}
-              <div className="flex space-x-3">
-                <a 
-                  href="https://m.facebook.com/100094738337826/"
-                  className="w-8 h-8 border border-gray-700 rounded-full flex items-center justify-center hover:bg-[#00D4FF] transition-colors"
-                >
-                  <FaFacebook className="w-4 h-4" />
-                </a>
-                <a 
-                  href="https://x.com/recreax_?s=21"
-                  className="w-8 h-8 border border-gray-700 rounded-full flex items-center justify-center hover:bg-[#00D4FF] transition-colors"
-                >
-                  <FaXTwitter className="w-4 h-4" />
-                </a>
-                <a 
-                  href="https://www.instagram.com/recreax_?igsh=MTRsaTdqeG8zaXQ2YQ=="
-                  className="w-8 h-8 border border-gray-700 rounded-full flex items-center justify-center hover:bg-[#00D4FF] transition-colors"
-                >
-                  <FaInstagram className="w-4 h-4" />
-                </a>
-                <a 
-                  href="https://www.linkedin.com/company/recreaxtalent/"
-                  className="w-8 h-8 border border-gray-700 rounded-full flex items-center justify-center hover:bg-[#00D4FF] transition-colors"
-                >
-                  <FaLinkedinIn className="w-4 h-4" />
-                </a>
-                <a 
-                  href="https://www.tiktok.com/@recreax?_t=ZS-8yzLmjOU5Mm&_r=1"
-                  className="w-8 h-8 border border-gray-700 rounded-full flex items-center justify-center hover:bg-[#00D4FF] transition-colors"
-                >
-                  <FaTiktok className="w-4 h-4" />
-                </a>
-              </div>
+            <Image
+              src="/recreaxlogo.png"
+              height={32}
+              width={120}
+              unoptimized={true}
+              alt="ReCreaX Logo"
+              className=""
+            />
+            {/* Social Media */}
+            <div className="flex space-x-3">
+              <a
+                href="https://m.facebook.com/100094738337826/"
+                className="w-8 h-8 border border-gray-700 rounded-full flex items-center justify-center hover:bg-[#00D4FF] transition-colors"
+              >
+                <FaFacebook className="w-4 h-4" />
+              </a>
+              <a
+                href="https://x.com/recreax_?s=21"
+                className="w-8 h-8 border border-gray-700 rounded-full flex items-center justify-center hover:bg-[#00D4FF] transition-colors"
+              >
+                <FaXTwitter className="w-4 h-4" />
+              </a>
+              <a
+                href="https://www.instagram.com/recreax_?igsh=MTRsaTdqeG8zaXQ2YQ=="
+                className="w-8 h-8 border border-gray-700 rounded-full flex items-center justify-center hover:bg-[#00D4FF] transition-colors"
+              >
+                <FaInstagram className="w-4 h-4" />
+              </a>
+              <a
+                href="https://www.linkedin.com/company/recreaxtalent/"
+                className="w-8 h-8 border border-gray-700 rounded-full flex items-center justify-center hover:bg-[#00D4FF] transition-colors"
+              >
+                <FaLinkedinIn className="w-4 h-4" />
+              </a>
+              <a
+                href="https://www.tiktok.com/@recreax?_t=ZS-8yzLmjOU5Mm&_r=1"
+                className="w-8 h-8 border border-gray-700 rounded-full flex items-center justify-center hover:bg-[#00D4FF] transition-colors"
+              >
+                <FaTiktok className="w-4 h-4" />
+              </a>
+            </div>
           </div>
 
           {/* Main Content Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-22 mb-8 sm:mb-12">
-            
             {/* Newsletter Section - Full width on mobile, 1/3 on desktop */}
             <div className="lg:col-span-1">
               <h3 className="font-normal text-white mb-4 text-base">Subscribe to our Newsletter</h3>
               <form onSubmit={handleFooterSubscribe} className="flex items-center gap-0 max-w-md lg:max-w-none">
                 <div className="flex-1 relative">
-                  <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400">
-                    ✉
-                  </span>
+                  <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400">✉</span>
                   <input
                     type="email"
                     value={footerEmail}
@@ -98,7 +102,7 @@ function Footer() {
                     className="w-full pl-10 pr-4 py-3 bg-transparent border border-gray-600 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-[#00D4FF] text-white placeholder-gray-400 text-sm"
                   />
                 </div>
-                <button 
+                <button
                   type="submit"
                   className="bg-[#00D4FF] text-[#12233D] p-3 rounded-r-lg hover:bg-[#00C4EF] transition-colors flex items-center justify-center border-l-0"
                 >
@@ -114,7 +118,7 @@ function Footer() {
                 <h3 className="font-medium text-[#00D4FF] mb-4 sm:mb-6 text-base">Pages</h3>
                 <ul className="space-y-2 sm:space-y-3">
                   <li>
-                    <Link  href="https://talents.recreax.com/authorization" passHref className="text-white hover:text-white transition-colors text-sm">
+                    <Link href="https://talents.recreax.com/authorization" passHref className="text-white hover:text-white transition-colors text-sm">
                       Rex AI
                     </Link>
                   </li>
@@ -141,10 +145,10 @@ function Footer() {
                 <h3 className="font-medium text-[#00D4FF] mb-4 sm:mb-6 text-base">Resources</h3>
                 <ul className="space-y-2 sm:space-y-3">
                   <li>
-                    <Link 
+                    <Link
                       href="/blog"
                       target="_blank"
-                      rel="noopener noreferrer" 
+                      rel="noopener noreferrer"
                       className="text-white hover:text-white transition-colors text-sm"
                     >
                       Blog
@@ -156,7 +160,11 @@ function Footer() {
                     </Link>
                   </li>
                   <li>
-                    <Link href="/faq" className="text-white hover:text-white transition-colors text-sm">
+                    <Link
+                      href="#faq-section"
+                      onClick={handleScrollToFAQ}
+                      className="text-white hover:text-white transition-colors text-sm"
+                    >
                       FAQ
                     </Link>
                   </li>

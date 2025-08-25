@@ -12,8 +12,10 @@ export default function Program() {
             <MentorReasons />
             <MentoringSteps />
             <WaysToSupportAsMentor />
+          
+       <div id="faq-section">
             <FaqComponent />
-           
+           </div>
             <CtaSection />
 
         </div>

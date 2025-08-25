@@ -71,7 +71,7 @@ const TestimonialsSection = () => {
     {
       quote:
         "Today I am better with communication, team collaboration, project testing, sprint planning and agile methodologies and this won't be possible if ReCreax didn't give me the chance.",
-      name: "Chinecherem",
+      name: "Chinenye",
       role: "Project Manager",
       avatar: "/chineye.jpg",
       fallback: "C",

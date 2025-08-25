@@ -14,7 +14,9 @@ export default function Home() {
       
       <Program />
       <TalentProgram />
-      <FAQ />
+      <div id="faq-section">
+        <FAQ />
+      </div>
       <CtaSection />
     </div>
   );

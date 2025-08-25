@@ -278,9 +278,12 @@ function Header() {
               <Accordion type="single" collapsible>
                 <AccordionItem value="programs">
                   <AccordionTrigger className="focus-visible:outline-none py-0 no-underline cursor-pointer">
-                    <p className="font-medium font-plus-jakarta-sans text-sm text-white">
+                    <p className="flex font-medium font-plus-jakarta-sans text-sm text-white">
                       Programs
+                <ChevronDown className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 pt-1" />
+
                     </p>
+                    
                   </AccordionTrigger>
                   <AccordionContent>
                     <div className="p-4 bg-white rounded-lg flex flex-col gap-4">
@@ -341,8 +344,10 @@ function Header() {
               <Accordion type="single" collapsible>
                 <AccordionItem value="why-recreax">
                   <AccordionTrigger className="focus-visible:outline-none py-0 no-underline cursor-pointer">
-                    <p className="font-medium font-plus-jakarta-sans text-sm text-white">
+                    <p className="flex font-medium font-plus-jakarta-sans text-sm text-white">
                       Why ReCreaX
+                <ChevronDown className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 pt-1" />
+
                     </p>
                   </AccordionTrigger>
                   <AccordionContent>

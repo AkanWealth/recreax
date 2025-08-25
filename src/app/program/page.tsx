@@ -13,7 +13,9 @@ export default function Program () {
    <TestimonialsSection />
    <ApplicationForm />
       <ProgramSection />
-      <FAQ />
+      <div id="faq-section">
+        <FAQ />
+      </div>
       <CtaSection />
     </div>
   );

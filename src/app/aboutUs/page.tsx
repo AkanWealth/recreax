@@ -13,7 +13,9 @@ export default function Program () {
     <WhatWeBelieve />
     <HowWeMakeThisHappen />
     {/* <TalentProgram /> */}
-    <FAQ />
+    <div id="faq-section">
+        <FAQ />
+      </div>
     <CtaSection />
   
     </div>
